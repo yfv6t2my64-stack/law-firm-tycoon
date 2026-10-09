@@ -10,7 +10,7 @@ Yerel kullanım için `index.html` dosyasını tarayıcıda aç. Kod, stiller ve
 
 ## v0.7
 
-12 ofis, 20 demirbaş, kişisel bütçe, 18 otomobil, 15 konut, Happy Hour ve beş seçenekli hukuk soruları içerir. Pasif net, pasif brüt ve gider saniye başına gösterilir; tamamlanan dosya ücretleri ayrıca eklenir.
+12 ofis, 20 demirbaş, kişisel bütçe, 18 otomobil, 15 konut, Happy Hour ve beş seçenekli hukuk soruları içerir. Gelir, gider ve son durum (gelir − gider) saniye başına gösterilir; tamamlanan dosya ücretleri ayrıca eklenir.
 
 ## Kaynak ve doğrulama
 
