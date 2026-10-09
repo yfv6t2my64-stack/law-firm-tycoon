@@ -1,0 +1,1085 @@
+<!doctype html><html lang="tr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0b1428"><title>Law Firm Tycoon v0.7</title><style>:root{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#eff5ff;background:#091222;font-synthesis:none}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top right,#213656 0,#091222 52%)}#app{max-width:640px;margin:auto;padding:24px 15px 90px}header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}header small{font-size:10px;letter-spacing:2px;color:#9aafc7;font-weight:800}h1{font-size:23px;margin:9px 0 4px}h1 span{font-size:11px;background:#d6b667;color:#152038;padding:5px 7px;border-radius:20px;vertical-align:middle}p{color:#aabbd3;font-size:12px;margin:4px 0}.emblem{background:#1d3653;padding:15px;border-radius:20px;font-size:25px}.hero{border:1px solid #3b5575;background:linear-gradient(145deg,#234265,#10263e);border-radius:20px;padding:19px;box-shadow:0 10px 30px #0002}.topline{font-size:10px;letter-spacing:1px;color:#c2cfe2;display:flex;justify-content:space-between}.topline span{color:#8decba;letter-spacing:0}.cash{font-size:38px;font-weight:850;margin:12px 0 20px;font-variant-numeric:tabular-nums;letter-spacing:-1px}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.three>div{background:#ffffff0d;border-radius:12px;padding:10px 8px}.three small,.metric small{font-size:9px;display:block;color:#a6bad4;margin-bottom:6px}.three strong{font-size:13px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0}.metric{background:#17283f;border:1px solid #2a3d57;border-radius:13px;padding:11px 7px;text-align:center}.metric strong{font-size:15px}.banner{font-size:12px;background:#1d343c;border-left:3px solid #76d7b6;color:#c8f2e7;padding:12px;border-radius:8px;margin:13px 0}.navigation{display:flex;position:sticky;top:0;background:#091222ef;backdrop-filter:blur(10px);padding:10px 0;gap:5px;z-index:2}.navigation button{flex:1;min-width:0;border:0;background:#172b42;color:#9eb4cd;border-radius:10px;padding:13px 1px;font-size:11px;cursor:pointer}.navigation button.selected{background:#d5b46b;color:#1a263a;font-weight:800}main h2{font-size:17px;margin:20px 0 12px}main h3{font-size:14px;margin:0 0 6px}.panel{border:1px solid #29425e;background:#11253b;border-radius:15px;padding:15px;margin:10px 0}.panel.accent{background:#19354e}.flex{display:flex;align-items:center;justify-content:space-between;gap:8px}.muted{color:#9fb3ca;font-size:12px}.fine{font-size:11px;color:#a6b7cc}.price{font-size:12px;color:#8fe9bd;font-weight:700}.action{border:0;background:#d6b96d;color:#1e2b37;border-radius:10px;padding:12px;font-weight:850;cursor:pointer;min-height:42px}.action:disabled{opacity:.38;cursor:not-allowed}.secondary{background:#29445e;color:#eaf3ff}.progress{height:7px;background:#304660;border-radius:9px;overflow:hidden;margin:10px 0}.progress>div{background:#7bdfad;height:100%;transition:width .25s}.label{padding:5px 8px;border-radius:20px;color:#e5cc8e;border:1px solid #85734d;font-size:10px}.rowitem{display:flex;gap:10px;align-items:center}.rowitem>.body{flex:1;min-width:0}.emoji{font-size:22px;background:#28425b;width:44px;height:44px;border-radius:13px;display:grid;place-items:center}.columns{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.columns .panel{margin:0}.separator{border:0;border-top:1px solid #2e4560;margin:13px 0}.hidden{display:none!important}.overlay{position:fixed;inset:0;background:#05101dd9;display:grid;place-items:center;padding:20px;z-index:5}.modal{background:#172c46;padding:25px;border-radius:22px;width:min(400px,100%);box-shadow:0 20px 80px #0008}.modal .primary{background:#d5b46b;border:0;border-radius:12px;width:100%;padding:15px;font-weight:800;margin-top:10px}footer{color:#788ba4;font-size:10px;line-height:1.5;padding:20px 0;text-align:center}@media(max-width:360px){.cash{font-size:30px}.three strong{font-size:11px}.navigation button{font-size:10px}.metrics{gap:4px}#app{padding-left:10px;padding-right:10px}}@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* v0.5 Mobile game polish */
+body{background:radial-gradient(circle at 85% 0%,#263b58 0%,#091321 47%);-webkit-tap-highlight-color:transparent}#app{padding-top:max(18px,env(safe-area-inset-top));padding-bottom:calc(95px + env(safe-area-inset-bottom));max-width:600px}header{padding:4px 0}header h1{letter-spacing:-.5px}.hero{background:linear-gradient(135deg,#284461,#11253d 68%,#172a41);border:1px solid #5c7289;box-shadow:0 18px 40px #0004;position:relative;overflow:hidden}.hero:after{content:'⚖';position:absolute;right:-12px;top:0;font-size:130px;opacity:.045;pointer-events:none}.cash{color:#fff8e8;text-shadow:0 1px 18px #ccb67728;overflow-wrap:anywhere}.navigation{position:fixed;bottom:0;left:0;right:0;top:auto;max-width:600px;margin:auto;padding:9px 12px calc(9px + env(safe-area-inset-bottom));border-top:1px solid #34506b;background:#091a2af7;box-shadow:0 -6px 28px #0005}.navigation button{min-height:48px;font-size:11px}.panel{box-shadow:0 5px 20px #0001}.panel h3{line-height:1.35}.action{min-height:44px;transition:filter .16s,transform .16s}.action:not(:disabled):active{transform:scale(.96)}.client{color:#d8c69a;font-size:11px;margin-top:7px}.staffbuttons{display:flex;flex-direction:column;gap:6px;min-width:90px}.staffbuttons .action{font-size:10px;padding:8px 5px;line-height:1.25;min-height:44px}.casecard{border-left:3px solid #d2b976}.panel p{line-height:1.5}.banner{line-height:1.5}.progress>div{background:linear-gradient(90deg,#54bcaa,#d2be83)}button:focus-visible{outline:2px solid #f4d18b;outline-offset:2px}@media(max-width:380px){.staffbuttons{min-width:76px}.staffbuttons .action{font-size:9px}.three strong{font-size:11px}.cash{font-size:32px}}
+
+/* Original navy/gold management interface */
+.eyebrow{font-size:10px;color:#deca93;letter-spacing:1.6px;font-weight:800}.version{border:1px solid #8d794c;padding:7px 9px;border-radius:9px;color:#ebd79b;font-size:12px}.mode-options{display:flex;gap:8px;margin:16px 0 10px}.mode-options button{flex:1}.quick-actions{margin:15px 0;flex-wrap:wrap}.next-goal{border-top:1px solid #53647b;padding-top:12px;margin-top:13px;color:#e3d4ac}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.panel p{font-size:13px}.panel .flex>div{min-width:0}.navigation button{font-size:10px}.backup-label{display:block;margin:16px 0 8px;font-size:13px}textarea{width:100%;resize:vertical;color:#eaf3ff;background:#0b1c30;border:1px solid #59738f;border-radius:10px;padding:12px;font:inherit;font-size:12px;margin-bottom:12px}#notice{position:fixed;z-index:6;left:50%;top:max(16px,env(safe-area-inset-top));transform:translate(-50%,-150%);width:min(90%,560px);border:1px solid #b6a276;border-radius:12px;background:#163b43;color:#fff2cd;padding:13px 16px;font-size:13px;box-shadow:0 6px 30px #0005;transition:transform .25s;pointer-events:none}#notice.show{transform:translate(-50%,0)}html[data-motion="reduced"] *{transition:none!important;animation:none!important;scroll-behavior:auto!important}.panel h2{margin-top:8px;line-height:1.3}.action{flex-shrink:0}main{min-height:360px}.cash{transition:color .25s}.fine{line-height:1.5}@media(min-width:900px){#app,.navigation{max-width:880px}#app{padding:30px 26px 110px}.hero{padding:24px}.cash{font-size:46px}.three strong{font-size:18px}.navigation button{font-size:13px}.panel{padding:20px}header h1{font-size:28px}}@media(max-width:380px){.flex{gap:6px}.panel{padding:12px}.panel p{font-size:12px}.mode-options{gap:5px}.action{padding:10px 8px;font-size:11px}.navigation{padding-left:6px;padding-right:6px}.navigation button{font-size:9px}}
+/* Istanbul expansion */
+.asset-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.asset-grid>.panel{margin:0}.asset-art{display:block;width:100%;height:120px;background:linear-gradient(160deg,#223d53,#102235);border-radius:12px;margin-bottom:14px}.asset-card{display:flex;flex-direction:column;gap:6px}.asset-card>.action{margin-top:auto;width:100%}.asset-card.current{border-color:#b9a276}.expansion-hero{display:grid;grid-template-columns:1.5fr 1fr;gap:12px;background:linear-gradient(135deg,#254b53,#152d42)}.expansion-hero .asset-art{align-self:center;margin:0}.back{margin:12px 0}.happy-active{border-color:#69d6b0;animation:celebrate 2s ease-in-out 3}.quiz-options{display:grid;gap:10px;margin:22px 0}.quiz-option{min-height:48px;border:1px solid #52677d;border-radius:10px;padding:14px;text-align:left;background:#142b40;color:#edf4ff;font:inherit;font-size:14px;cursor:pointer}.quiz-option.picked{border-color:#e4c783;background:#394332}.quiz-option.correct{border-color:#79dcba;background:#154d42}.quiz-option.wrong{border-color:#e4a1a1;background:#542e3b}.quiz-option:disabled{cursor:default;opacity:1}.answer-feedback{padding:14px;border-left:3px solid #c5ac75;margin:16px 0;background:#102133}.answer-feedback a{color:#9de2db;font-size:13px}.question h3{font-size:17px;line-height:1.5;margin-top:14px}label:has(input[type=number]){display:block;margin:14px 0;color:#c9d6e4;font-size:13px}input[type=number]{display:block;margin:8px 0;width:100%;padding:12px;color:#fff;background:#091e31;border:1px solid #668098;border-radius:9px;font:inherit}.panel{overflow-wrap:anywhere}.action{white-space:normal}.asset-grid .action{font-size:12px}@keyframes celebrate{50%{box-shadow:0 0 22px #5ad1a735}}@media(max-width:600px){.asset-grid{grid-template-columns:1fr}.expansion-hero{grid-template-columns:1fr}.expansion-hero .asset-art{height:110px}.mode-options{flex-wrap:wrap}.panel .flex{flex-wrap:wrap}.quiz-option{font-size:13px}.asset-art{height:135px}}
+header h1 span{display:inline-block;white-space:nowrap;line-height:1.2;margin-left:3px}.three>div{min-width:0}.three strong{display:block;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}@media(max-width:380px){.three strong{font-size:10px}}
+</style></head><body><div id="app"><header><div><small>⚖️ LAW FIRM TYCOON</small><h1>Şener & Partners <span id="level"></span></h1><p>Küçük bir bürodan uluslararası bir hukuk firmasına.</p></div><div class="emblem">⚖️</div></header><section class="hero"><div class="topline">ŞİRKET KASASI <span id="status">● Büro çalışıyor</span></div><div id="cash" class="cash">₺500</div><div class="three"><div><small>PASİF NET</small><strong id="net"></strong></div><div><small>PASİF BRÜT</small><strong id="gross"></strong></div><div><small>GİDER</small><strong id="expense"></strong></div></div></section><section class="metrics"><div class="metric"><small>İtibar</small><strong id="rep"></strong></div><div class="metric"><small>Müvekkil mem.</small><strong id="sat"></strong></div><div class="metric"><small>Tamamlanan</small><strong id="cases"></strong></div><div class="metric"><small>Ekip</small><strong id="people"></strong></div></section><div id="banner" class="banner">Dosyalar otomatik açılır ve tamamlanır; para her saniye kasana eklenir.</div><nav class="navigation"><button data-tab="office" class="selected">🏛 Ofis</button><button data-tab="cases">📁 Dosyalar</button><button data-tab="team">👥 Ekip</button><button data-tab="upgrade">⬆ Geliştirmeler</button><button data-tab="profile">📊 Profil</button></nav><div id="notice" role="status" aria-live="polite"></div><main id="content"></main><footer>v0.7 · Bu oyundaki hukuki süreçler eğlence amacıyla sadeleştirilmiştir. Gerçek hukuki yönlendirme değildir.</footer></div><div id="overlay" class="overlay hidden"><div class="modal"><h2>👋 Tekrar hoş geldin!</h2><div id="offline"></div><button id="dismiss" class="primary">Büroya dön</button></div></div><script>const CONFIG={saveKey:'lawfirm-tycoon-v7',legacy:['lawfirm-tycoon-v6','lawfirm-tycoon-v5','lawfirm-tycoon-v4','lawfirm-tycoon-v2','lawfirm-tycoon-v1'],offlineCap:8*3600,monthSeconds:600,version:7,
+ roles:[{name:'Stajyer',cost:650,rate:1.5,salary:.12},{name:'Avukat',cost:2900,rate:5,salary:.5},{name:'Kıdemli Avukat',cost:13500,rate:19,salary:2.1},{name:'Danışman Avukat',cost:48000,rate:57,salary:7},{name:'Ortak',cost:150000,rate:155,salary:20},{name:'Sermaye Ortağı',cost:680000,rate:475,salary:64}],
+ practices:[{name:'İcra',unlock:0,base:160,secs:13,capacity:2,stages:['Takip talebi','Ödeme emri','Haciz / tahsilat'],icon:'⚖️'},{name:'İş',unlock:12,base:650,secs:23,capacity:2,stages:['Arabuluculuk','Dilekçeler','Duruşma','Karar'],icon:'👥'},{name:'Ticaret',unlock:65,base:2400,secs:42,capacity:2,stages:['Dilekçeler','Deliller','Bilirkişi','Hüküm'],icon:'🏢'},{name:'Şirketler',unlock:180,base:8000,secs:65,capacity:2,stages:['İnceleme','Sözleşme','Müzakere','Kapanış'],icon:'📑'},{name:'Tahkim',unlock:480,base:21000,secs:110,capacity:2,stages:['Hakem heyeti','Yazılı beyanlar','Duruşma','Hakem kararı'],icon:'🌍'}],
+ missions:[{id:'cases5',title:'5 dosyayı tamamla',target:5,field:'cases',bonus:800},{id:'team3',title:'3 avukat işe al',target:3,field:'staff',bonus:1400},{id:'cases25',title:'25 dosyayı tamamla',target:25,field:'cases',bonus:4200},{id:'reputation40',title:'40 itibara ulaş',target:40,field:'reputation',bonus:6000},{id:'cases100',title:'100 dosyayı tamamla',target:100,field:'cases',bonus:25000}]};
+const CLIENT_CATEGORIES=['Bireysel','Girişim','Küçük işletme','Orta ölçekli şirket','Büyük şirket','Çok uluslu şirket','Finans kuruluşu'];
+const INDUSTRIES=['Lojistik','Teknoloji','İnşaat','Tekstil','Enerji','Gıda','Denizcilik','Perakende','Finans'];
+const MATTERS=[
+['Ödenmeyen ticari fatura','İlamsız takip','İtirazın iptali','İtirazın kaldırılması','Kambiyo senedine dayalı takip','Haciz işlemleri','İstihkak iddiası','Konkordato alacağı','İflas masasına kayıt','Borcun yapılandırılması'],
+['Kıdem ve ihbar tazminatı','İşe iade başvurusu','Fazla çalışma alacağı','Yıllık izin ücreti','Ücret alacağı','İşyerinde ayrımcılık','İş sözleşmesinin feshi','Rekabet yasağı','Üst düzey yönetici uyuşmazlığı'],
+['Ticari alacak davası','Sözleşmeye aykırılık','Haksız rekabet','Ortaklıktan çıkma','Pay sahipleri uyuşmazlığı','Ticari tazminat','Cari hesap uyuşmazlığı','Distribütörlük sözleşmesi','Teminat mektubu ihtilafı'],
+['Hisse devri','Hukuki durum tespiti','Birleşme ve devralma','Pay sahipleri sözleşmesi','Şirket yeniden yapılandırması','Genel kurul danışmanlığı','Yönetim kurulu kararı','Sermaye artırımı','Yatırım sözleşmesi'],
+['İnşaat tahkimi','Milletlerarası satım tahkimi','Deniz ticareti tahkimi','Enerji uyuşmazlığı','Pay sahipleri tahkimi','Yatırım tahkimi','Liman hizmetleri tahkimi','Uzun dönem tedarik tahkimi','Ortak girişim tahkimi'] ];
+const CLIENT_PREFIX=['Nova','Atlas','Mavi','Pera','Kuzey','Ada','Arma','Delta','Koru','Luna','Doruk','Vega'];
+
+// All new economy constants live here; baseline rates remain in CONFIG.
+const BALANCE={trainingBase:1800,trainingGrowth:2.4,trainingMax:5,trainingIncome:.03,trainingSpeed:.04,trainingSuccess:.005,boostCost:160,boostDuration:120,boostCooldown:600,boostMultiplier:1.5,draftReward:25,draftCooldown:30};
+const MODES={balanced:{label:'Dengeli',duration:1,chance:0,detail:'Standart süre ve başarı olasılığı.'},quality:{label:'Titiz',duration:1.15,chance:.04,detail:'Yeni dosyalar %15 daha uzun; başarı +4 puan.'},speed:{label:'Hızlı',duration:.85,chance:-.035,detail:'Yeni dosyalar %15 daha kısa; başarı −3,5 puan.'}};
+const EQUIPMENT=[{id:'archive',name:'Dijital dosya arşivi',cost:1400,productivity:.08,upkeep:.08,description:'Pasif üretim +%8 · bakım ₺0,08/sn'}, {id:'research',name:'Araştırma masası',cost:5200,productivity:.12,upkeep:.2,description:'Pasif üretim +%12 · bakım ₺0,20/sn'}, {id:'reception',name:'Müvekkil karşılama alanı',cost:18000,productivity:.15,upkeep:.5,description:'Pasif üretim +%15 · bakım ₺0,50/sn'}];
+const CONTRACTS=[{id:'startup',name:'Girişim danışmanlığı',cost:600,rate:3,duration:300,rep:12,office:0},{id:'company',name:'Kurumsal danışmanlık',cost:2500,rate:12,duration:300,rep:25,office:1},{id:'global',name:'Uluslararası danışmanlık',cost:10000,rate:45,duration:300,rep:55,office:4}];
+
+const EXPANSION={happyDuration:300,happyMultiplier:2,happyDailyLimit:3,reserveSeconds:120,quizReward:10,quizDailyRewards:5};
+const OFFICES=[
+ ['Bağcılar Küçük Ofis',0,60,5,2,0],['Esenler Paylaşımlı Ofis',2200,180,8,2,12],['Bayrampaşa Bağımsız Hukuk Bürosu',8500,900,12,3,20],['Bakırköy Merkezi Ofis',30000,3000,18,3,30],['Şişli Profesyonel Hukuk Bürosu',95000,12000,26,4,40],['Mecidiyeköy İş Merkezi',280000,45000,36,4,50],['Kozyatağı Modern Plaza',800000,150000,48,4,60],['Maslak A Sınıfı Plaza',2400000,450000,64,5,70],['Levent Premium Hukuk Ofisi',7200000,1200000,82,5,80],['Etiler Prestijli Villa Ofis',22000000,3000000,104,5,85],['Zorlu Center / Zincirlikuyu Lüks Ofis',700000000,7200000,130,5,90],['Kanyon / Büyükdere Caddesi Uluslararası Hukuk Firması',2400000000,15000000,160,5,95]
+].map(([name,cost,rent,capacity,departments,rep],i)=>({id:i,name,cost,rent,capacity,departments,rep,prestige:i*10,productivity:i*.025,clients:i*.02,color:['#6da5b1','#b8a275','#77a79b','#aa92ba'][i%4]}));
+// Effects are per level. Aggregate bonuses have explicit caps in fixtureEffects.
+const FIXTURES=[
+ ['computers','Temel Bilgisayarlar',500,0,.025,0,1,0,.02],['monitors','Çift Monitör',1800,1,.025,.01,1,0,.03],['chairs','Ergonomik Çalışma Koltuğu',1000,0,.01,0,3,0,.01],['internet','Hızlı İnternet',1200,0,.02,.015,1,0,.06],['printer','Yazıcı ve Tarayıcı Sistemi',2400,1,.02,.01,0,0,.03],['files','Dijital Dosya Yönetim Sistemi',4800,2,.025,.025,1,0,.08],['meeting','Toplantı Odası Ekipmanları',9000,3,.02,0,1,1,.08],
+ ['precedent','İçtihat Arama Yazılımı',6500,2,.02,.025,0,1,.12],['legislation','Mevzuat Veri Tabanı',8500,2,.02,.025,0,1,.15],['subscription','Hukuki Araştırma Aboneliği',14000,3,.025,.025,0,1,.2],['workflow','UYAP Uyumlu İş Akışı Araçları',32000,4,.03,.025,1,0,.25],['ai','Yapay Zekâ Destekli Hukuki Araştırma Sistemi',180000,6,.04,.03,1,1,.4],
+ ['coffee','Kahve Makinesi',700,0,.01,0,2,0,.02],['espresso','Premium Espresso Makinesi',18000,3,.015,0,3,0,.06],['snacks','Atıştırmalık Köşesi',3500,1,.01,0,3,0,.08],['ps5','PlayStation 5',14000,3,.01,0,4,0,.03],['foosball','Langırt Masası',11000,2,.01,0,3,0,.01],['rest','Dinlenme Alanı',45000,4,.015,0,4,0,.08],['terrace','Ofis Terası',140000,6,.015,0,4,1,.15],['lounge','Çalışan Lounge Alanı',420000,8,.02,0,5,1,.25]
+].map(([id,name,cost,office,productivity,speed,satisfaction,reputation,upkeep])=>({id,name,cost,office,productivity,speed,satisfaction,reputation,upkeep,max:3}));
+const CARS=['Fiat Egea','Renault Clio','Volkswagen Golf','Toyota Corolla','Honda Civic','Mini Cooper','BMW 3 Serisi','Mercedes-Benz C Serisi','Audi A6','BMW 5 Serisi','Mercedes-Benz E Serisi','Porsche Macan','Porsche 911','Mercedes-AMG GT','Bentley Continental GT','Ferrari Roma','Lamborghini Huracán','Rolls-Royce Ghost'].map((name,i)=>({id:'car'+i,name,cost:Math.round(45000*1.75**i),office:Math.min(11,Math.floor(i*.65)),prestige:(i+1)*3,color:['#e1b66b','#8ec1ba','#899ab5','#b88591'][i%4]}));
+const HOMES=['Esenyurt Küçük Kiralık Daire','Sultangazi 1+1 Daire','Gaziosmanpaşa Standart Daire','Bahçelievler 2+1 Daire','Küçükçekmece Site İçinde Daire','Üsküdar Merkezi Daire','Ataşehir Modern Rezidans','Kadıköy / Moda Prestijli Daire','Acıbadem Lüks Daire','Suadiye Premium Rezidans','Caddebostan Deniz Manzaralı Daire','Bebek Boğaz Manzaralı Daire','Arnavutköy Tarihi Boğaz Yalısı','Yeniköy Ultra Lüks Villa','Tarabya Boğaz Yalısı'].map((name,i)=>({id:'home'+i,name,cost:Math.round(90000*2.25**i),office:Math.min(11,Math.floor(i*.8)),prestige:(i+1)*5,color:['#a9bbb7','#d3ae76','#92abc4'][i%3]}));
+
+const rand=s=>{s.seed=(Math.imul(s.seed||177,1664525)+1013904223)>>>0;return s.seed/4294967296};
+const totalExpenses=s=>s.expensesLifetime||0;
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+function log(s,str){s.log.unshift(str);s.log=s.log.slice(0,12)}
+
+function fresh(now=Date.now()){return {version:7,...freshExpansion(now),mode:'balanced',training:0,equipment:[],boost:0,boostCooldown:0,contracts:[],draftCooldown:0,tickRemainder:0,caseRevenue:0,contractRevenue:0,manualRevenue:0,bonusRevenue:0,seed:177,experience:0,expensesLifetime:0,dailyKey:dayKey(now),dailyCounts:{cases:0,revenue:0,hire:0,upgrade:0},dailyClaimed:[],cash:500,totalEarned:500,totalSpent:0,cases:0,wins:0,settled:0,reputation:10,satisfaction:75,staff:[0,0,0,0,0,0],office:0,departments:[1,0,0,0,0],casesActive:[],nextCaseId:1,claimed:[],log:['Büron açıldı. İlk müvekkiller yolda.'],savedAt:now,simTime:0,month:1,monthlyRevenue:0,monthlyExpenses:0,history:[],sound:false,reducedMotion:false};}
+function hydrate(raw,now=Date.now()){
+ const s=fresh(now);if(!raw||typeof raw!=='object')return s;
+ if(raw.version===7||raw.version===6||raw.version===5||raw.version===4){for(const k of Object.keys(s)){if(Object.prototype.hasOwnProperty.call(raw,k))s[k]=raw[k]}}
+ else {s.cash=Number(raw.money??raw.cash??500);s.totalEarned=Number(raw.earned??raw.totalEarned??500);s.cases=Number(raw.cases)||0;s.staff=[...(Array.isArray(raw.hires)?raw.hires:[])].slice(0,4).concat([0,0]).slice(0,6);s.office=Array.isArray(raw.upgrades)?raw.upgrades.reduce((a,b)=>a+(Number(b)||0),0):0;s.savedAt=Number(raw.last)||now;s.log=['Önceki prototipin ilerlemesi aktarıldı.'];}
+ for(const key of ['cash','totalEarned','totalSpent','cases','wins','settled','reputation','satisfaction','office','simTime','month','monthlyRevenue','monthlyExpenses','nextCaseId','seed','experience','expensesLifetime']){s[key]=Number.isFinite(Number(s[key]))?clamp(Number(s[key]),0,1e15):fresh(now)[key]}
+ s.staff=CONFIG.roles.map((_,i)=>clamp(Math.floor(Number(s.staff?.[i])||0),0,1000));s.departments=CONFIG.practices.map((_,i)=>clamp(Math.floor(Number(s.departments?.[i])||0),0,100));s.departments[0]=Math.max(1,s.departments[0]);s.casesActive=Array.isArray(s.casesActive)?s.casesActive.filter(c=>c&&Number.isFinite(c.remaining)&&Number.isInteger(c.practice)&&c.practice>=0&&c.practice<5).slice(0,70):[];s.claimed=Array.isArray(s.claimed)?s.claimed.filter(x=>typeof x==='string'):[];s.log=Array.isArray(s.log)?s.log.slice(0,12):[];s.history=Array.isArray(s.history)?s.history.slice(-6):[];s.savedAt=Number.isFinite(Number(raw.savedAt??raw.last))?Math.min(now,Number(raw.savedAt??raw.last)):now;s.reputation=clamp(s.reputation,0,100);s.satisfaction=clamp(s.satisfaction,0,100);s.version=7;s.seed=(Math.floor(s.seed)||177)>>>0;s.experience=clamp(s.experience,0,1e12);s.dailyKey=typeof raw.dailyKey==='string'?raw.dailyKey:dayKey(now);s.dailyCounts=(raw.dailyCounts&&typeof raw.dailyCounts==='object')?Object.fromEntries(['cases','revenue','hire','upgrade'].map(k=>[k,clamp(Number(raw.dailyCounts[k])||0,0,1e15)])):{cases:0,revenue:0,hire:0,upgrade:0};s.dailyClaimed=Array.isArray(raw.dailyClaimed)?raw.dailyClaimed.filter(k=>typeof k==='string'):[];sanitizeV6(s,now);sanitizeExpansion(s,raw,now);resetDaily(s,now);return s;
+}
+
+const staffCount=s=>s.staff.reduce((a,b)=>a+b,0)+1;
+const baseIncomeRate=s=>(2+s.staff.reduce((a,n,i)=>a+n*CONFIG.roles[i].rate,0))*(1+s.office*.2)*(1+Math.max(0,s.reputation-10)*.002);
+const expenseRate=s=>fixtureEffects(s).upkeep+.25+officeRent(s)/CONFIG.monthSeconds+s.staff.reduce((a,n,i)=>a+n*CONFIG.roles[i].salary,0)+s.departments.reduce((a,n)=>a+Math.max(0,n-1)*.5,0)+EQUIPMENT.filter(e=>s.equipment.includes(e.id)).reduce((a,e)=>a+e.upkeep,0);
+const incomeRate=s=>baseIncomeRate(s)*productivity(s)*Math.max(happyMultiplier(s),s.boost>0?BALANCE.boostMultiplier:1);
+const netRate=s=>incomeRate(s)+contractRate(s)-expenseRate(s);
+const hiringCost=(s,i)=>Math.floor(CONFIG.roles[i].cost*1.68**s.staff[i]);
+const officeCost=s=>OFFICES[s.officeTier+1]?.cost??Infinity;
+const deptCost=(s,i)=>Math.floor((i+1)*1750*2.1**Math.max(0,s.departments[i]-1));
+const available=(s,i)=>s.cases>=CONFIG.practices[i].unlock && s.office>=[0,0,2,4,7][i];
+function spend(s,amount){if(!Number.isFinite(amount)||amount<0||s.cash+1e-7<amount)return false;s.cash-=amount;s.totalSpent+=amount;s.distributableProfit-=amount;return true}
+
+function promote(s,i){if(!Number.isInteger(i)||i<0||i>=5||s.staff[i]<1||s.staff[i+1]>=1000)return false;const cost=Math.floor(hiringCost(s,i+1)*.62);if(!spend(s,cost))return false;s.staff[i]--;s.staff[i+1]++;s.experience=(s.experience||0)+1;log(s,CONFIG.roles[i].name+' terfi etti: '+CONFIG.roles[i+1].name);return true}
+function promotionCost(s,i){return Math.floor(hiringCost(s,i+1)*.62)}
+function hire(s,i){if(!Number.isInteger(i)||i<0||i>=6||s.staff[i]>=1000||staffCount(s)>=currentOffice(s).capacity)return false;const cost=hiringCost(s,i);if(!Number.isFinite(cost)||!spend(s,cost))return false;s.staff[i]++;s.dailyCounts.hire++;log(s,CONFIG.roles[i].name+' ekibe katıldı');return true}
+
+function upgradeOffice(s){return moveOffice(s,s.officeTier+1)}
+function upgradeDept(s,i){if(!Number.isInteger(i)||i<0||i>=5||!available(s,i)||s.departments[i]>=100||(!s.departments[i]&&s.departments.filter(n=>n>0).length>=currentOffice(s).departments))return false;const cost=deptCost(s,i);if(!Number.isFinite(cost)||!spend(s,cost))return false;s.departments[i]++;s.dailyCounts.upgrade++;log(s,CONFIG.practices[i].name+' departmanı geliştirildi');return true}
+
+const DAY_FORMATTER=new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Istanbul',year:'numeric',month:'2-digit',day:'2-digit'});
+function dayKey(now=Date.now()){return DAY_FORMATTER.format(new Date(now))}
+function dailyProgress(s,id){return id==='cases'?s.dailyCounts.cases:id==='revenue'?s.dailyCounts.revenue:id==='hire'?s.dailyCounts.hire:s.dailyCounts.upgrade}
+const DAILY=[{id:'cases',label:'Bugün 8 dosya sonuçlandır',target:8,reward:650},{id:'revenue',label:'Bugün ₺5.000 gelir elde et',target:5000,reward:850},{id:'hire',label:'Bugün bir hukukçu işe al',target:1,reward:1100},{id:'upgrade',label:'Bir ofis veya departman yatırımı yap',target:1,reward:1250}];
+function resetDaily(s,now=Date.now()){const k=dayKey(now);if(s.dailyKey!==k){s.dailyKey=k;s.dailyCounts={cases:0,revenue:0,hire:0,upgrade:0};s.dailyClaimed=[];}}
+function claimDaily(s,id){const m=DAILY.find(x=>x.id===id);if(!m||s.dailyClaimed.includes(id)||dailyProgress(s,id)<m.target)return false;s.dailyClaimed.push(id);credit(s,m.reward,'bonusRevenue');return true}
+function claim(s,id){const m=CONFIG.missions.find(x=>x.id===id);if(!m||s.claimed.includes(id)||missionProgress(s,m)<m.target)return false;s.claimed.push(id);credit(s,m.bonus,'bonusRevenue');log(s,'Görev ödülü: '+m.title);return true}
+function missionProgress(s,m){return m.field==='staff'?staffCount(s)-1:Number(s[m.field]||0)}
+
+function addCase(s,i){
+ const cfg=CONFIG.practices[i],scale=1+Math.min(160,s.cases)*.012,id=s.nextCaseId++;
+ const templates=MATTERS[i],title=templates[Math.floor(rand(s)*templates.length)];
+ const tier=Math.min(6,Math.floor(s.reputation/22)+Math.floor(s.office/3));
+ const group=Math.min(tier,Math.floor(rand(s)*(tier+1)));const client=CLIENT_PREFIX[Math.floor(rand(s)*CLIENT_PREFIX.length)]+' '+['Danışmanlık','Ticaret','Holding','Sanayi','Teknoloji'][Math.floor(rand(s)*5)];
+ const industry=INDUSTRIES[Math.floor(rand(s)*INDUSTRIES.length)];
+ const capacity=Math.max(1,staffCount(s));
+ const duration=MODES[s.mode].duration*cfg.secs*(.85+rand(s)*.3)/(1+Math.max(0,s.departments[i]-1)*.22+Math.max(0,capacity-1)*.023+ s.training*BALANCE.trainingSpeed+fixtureEffects(s).speed);
+ s.casesActive.push({id,mode:s.mode,practice:i,remaining:duration,duration,fee:Math.round(cfg.base*scale*(1+currentOffice(s).clients)*(1+s.departments[i]*.12)*(1+group*.08)),title,client,industry,category:CLIENT_CATEGORIES[group]});
+}
+function finishCase(s,c){
+ const roll=rand(s),success=roll<successChance(s,c.mode||'balanced');
+ const settlement=!success&&roll<.94, paid=Math.round(c.fee*happyMultiplier(s)*(success?1:settlement?.58:.2));
+ credit(s,paid,'caseRevenue');s.dailyCounts.cases++;s.cases++;
+ if(success){s.wins++;s.reputation=clamp(s.reputation+.35,0,100);s.satisfaction=clamp(s.satisfaction+.1,0,100)}else if(settlement){s.settled++;s.satisfaction=clamp(s.satisfaction-.08,0,100)}else{s.satisfaction=clamp(s.satisfaction-.34,0,100)}
+ if(s.cases%3===0)log(s,(success?'✓ ':settlement?'🤝 ':'• ')+c.title+' · '+paid.toLocaleString('tr-TR')+' ₺');
+}
+
+const finite=(value,min=0,max=1e15,fallback=0)=>Number.isFinite(Number(value))?clamp(Number(value),min,max):fallback;
+const productivity=s=>1+currentOffice(s).productivity+fixtureEffects(s).productivity+fixtureEffects(s).satisfaction*.001+s.training*BALANCE.trainingIncome+EQUIPMENT.filter(e=>s.equipment.includes(e.id)).reduce((a,e)=>a+e.productivity,0);
+const contractRate=s=>s.contracts.reduce((a,c)=>a+CONTRACTS.find(x=>x.id===c.id).rate,0);
+const trainingCost=s=>Math.floor(BALANCE.trainingBase*BALANCE.trainingGrowth**s.training);
+const successChance=(s,mode='balanced')=>clamp(.73+(s.reputation+Math.min(10,fixtureEffects(s).reputation))*.001+s.satisfaction*.0004+s.training*BALANCE.trainingSuccess+MODES[mode].chance,.55,.95);
+function credit(s,amount,category){s.cash+=amount;s.distributableProfit+=amount;s.totalEarned+=amount;s.monthlyRevenue+=amount;s.dailyCounts.revenue+=amount;if(category)s[category]+=amount;}
+function train(s){if(s.training>=BALANCE.trainingMax||!spend(s,trainingCost(s)))return false;s.training++;s.dailyCounts.upgrade++;log(s,'Ekip eğitimi seviyesi '+s.training);return true;}
+function buyEquipment(s,id){const e=EQUIPMENT.find(x=>x.id===id);if(!e||s.equipment.includes(id)||!spend(s,e.cost))return false;s.equipment.push(id);s.dailyCounts.upgrade++;log(s,e.name+' kullanıma alındı');return true;}
+function startBoost(s){if(s.boostCooldown>0||!spend(s,BALANCE.boostCost))return false;s.boost=BALANCE.boostDuration;s.boostCooldown=BALANCE.boostCooldown;log(s,'Ekip planlama oturumu: 120 saniye pasif üretim +%50');return true;}
+function writeDraft(s){if(s.draftCooldown>0)return false;s.draftCooldown=BALANCE.draftCooldown;credit(s,BALANCE.draftReward,'manualRevenue');return true;}
+function setMode(s,mode){if(!Object.hasOwn(MODES,mode))return false;s.mode=mode;return true;}
+function signContract(s,id){const c=CONTRACTS.find(x=>x.id===id);if(!c||s.contracts.length>=2||s.contracts.some(x=>x.id===id)||s.reputation<c.rep||s.office<c.office||!spend(s,c.cost))return false;s.contracts.push({id,remaining:c.duration});log(s,c.name+' başladı');return true;}
+function sanitizeV6(s,now){
+ s.office=Math.floor(finite(s.office,0,50));s.simTime=finite(s.simTime,0,CONFIG.monthSeconds-1);s.month=Math.max(1,Math.floor(s.month));
+ for(const k of ['cases','wins','settled','nextCaseId'])s[k]=Math.floor(s[k]);
+ s.nextCaseId=Math.max(1,s.nextCaseId);s.mode=Object.hasOwn(MODES,s.mode)?s.mode:'balanced';s.training=Math.floor(finite(s.training,0,BALANCE.trainingMax));
+ s.equipment=Array.isArray(s.equipment)?[...new Set(s.equipment.filter(id=>EQUIPMENT.some(x=>x.id===id)))]:[];
+ for(const k of ['boost','boostCooldown','draftCooldown','caseRevenue','contractRevenue','manualRevenue','bonusRevenue'])s[k]=finite(s[k]);
+ s.boost=Math.min(s.boost,BALANCE.boostDuration);s.boostCooldown=Math.min(s.boostCooldown,BALANCE.boostCooldown);s.draftCooldown=Math.min(s.draftCooldown,BALANCE.draftCooldown);s.tickRemainder=finite(s.tickRemainder,0,.99999999);
+ s.contracts=Array.isArray(s.contracts)?s.contracts.filter(c=>c&&CONTRACTS.some(x=>x.id===c.id)&&Number.isFinite(c.remaining)&&c.remaining>0).filter((c,i,a)=>a.findIndex(x=>x.id===c.id)===i).slice(0,2).map(c=>({id:c.id,remaining:Math.min(c.remaining,CONTRACTS.find(x=>x.id===c.id).duration)})):[];
+ s.casesActive=s.casesActive.filter(c=>c&&Number.isFinite(c.duration)&&c.duration>0&&Number.isFinite(c.fee)&&c.fee>=0&&Number.isFinite(c.id)&&c.id>0&&c.remaining>0).map(c=>({id:Math.floor(c.id),practice:c.practice,duration:finite(c.duration,1,86400),remaining:Math.min(c.remaining,finite(c.duration,1,86400)),fee:finite(c.fee,0,1e12),mode:Object.hasOwn(MODES,c.mode)?c.mode:'balanced',...Object.fromEntries(['title','client','industry','category'].map(k=>[k,String(c[k]??'').slice(0,180)]))}));
+ s.nextCaseId=Math.max(s.nextCaseId,...s.casesActive.map(c=>c.id+1));s.log=s.log.map(x=>String(x).slice(0,240));
+ s.history=s.history.filter(h=>h&&Number.isFinite(h.revenue)&&Number.isFinite(h.expenses)&&Number.isFinite(h.month)).map(h=>({month:Math.floor(finite(h.month,1)),revenue:finite(h.revenue),expenses:finite(h.expenses)}));
+ s.sound=s.sound===true;s.reducedMotion=s.reducedMotion===true;s.savedAt=finite(s.savedAt,0,now,now);
+}
+
+// Chunked deterministic simulation: supports offline progress without a frame-by-frame loop.
+function advance(s,seconds,wallStart=s.savedAt){
+ const skip=Math.max(0,(s.clockNow-wallStart)/1000);wallStart+=skip*1000;const elapsed=finite(seconds-skip,0,CONFIG.offlineCap), before=s.totalEarned, oldCases=s.cases,oldExpenses=s.expensesLifetime,oldCash=s.cash;
+ const prior=s.tickRemainder;const total=elapsed+prior;const ticks=Math.floor(total+1e-8);s.tickRemainder=Math.max(0,total-ticks);
+ let lastDay=Math.floor((wallStart+10800000)/86400000);resetDaily(s,wallStart);
+ for(let n=0;n<ticks;n++){
+  // Istanbul daily boundary (UTC+3), checked each tick without formatting dates.
+  const tickTime=wallStart+(n+1-prior)*1000,day=Math.floor((tickTime+10800000)/86400000);if(day!==lastDay){resetDaily(s,tickTime);lastDay=day;}
+  s.clockNow=Math.max(s.clockNow,tickTime-1000);const revenue=incomeRate(s),expense=expenseRate(s);credit(s,revenue);credit(s,contractRate(s),'contractRevenue');s.cash-=expense;s.distributableProfit-=expense;s.monthlyExpenses+=expense;s.expensesLifetime+=expense;
+  for(const k of ['boost','boostCooldown','draftCooldown'])s[k]=Math.max(0,s[k]-1);
+  s.contracts=s.contracts.map(c=>({...c,remaining:c.remaining-1})).filter(c=>c.remaining>0);
+  const unlocked=CONFIG.practices.map((_,i)=>i).filter(i=>available(s,i)&&s.departments[i]>0);
+  const slots=Math.min(2+Math.floor(staffCount(s)/2),14);
+  // Round-robin refill avoids permanent starvation of later departments.
+  const startIndex=s.nextCaseId%Math.max(1,unlocked.length);
+  const order=unlocked.slice(startIndex).concat(unlocked.slice(0,startIndex));
+  for(const i of order){const cap=Math.min(s.departments[i],3+Math.floor(staffCount(s)/3));const active=s.casesActive.filter(c=>c.practice===i).length;let fill=Math.min(cap-active,slots-s.casesActive.length);while(fill-->0)addCase(s,i)}
+  for(const c of s.casesActive)c.remaining--;
+  const complete=s.casesActive.filter(c=>c.remaining<=0);s.casesActive=s.casesActive.filter(c=>c.remaining>0);for(const c of complete)finishCase(s,c);
+  s.simTime++;while(s.simTime>=CONFIG.monthSeconds){s.history.push({month:s.month++,revenue:Math.round(s.monthlyRevenue),expenses:Math.round(s.monthlyExpenses)});s.history=s.history.slice(-6);s.simTime-=CONFIG.monthSeconds;s.monthlyRevenue=0;s.monthlyExpenses=0;}
+ }
+ refreshHappyDay(s,wallStart+elapsed*1000);return {revenue:s.totalEarned-before,completed:s.cases-oldCases,expenses:s.expensesLifetime-oldExpenses,net:s.cash-oldCash};
+}
+function simulateAway(s,now=Date.now()){const elapsed=clamp((now-s.savedAt)/1000,0,CONFIG.offlineCap);const cashBefore=s.cash,earnedBefore=s.totalEarned,casesBefore=s.cases;advance(s,elapsed,s.savedAt);resetDaily(s,now);refreshHappyDay(s,now);s.savedAt=Math.max(s.savedAt,now);return {seconds:elapsed,revenue:s.totalEarned-earnedBefore,completed:s.cases-casesBefore,net:s.cash-cashBefore,expenses:(s.totalEarned-earnedBefore)-(s.cash-cashBefore)};}
+
+function parseSave(text,now=Date.now()){
+ if(typeof text!=='string'||text.length>1000000)throw new Error('Kayıt boyutu geçersiz.');
+ let raw;try{raw=JSON.parse(text);}catch{throw new Error('Geçerli JSON kayıt metni gir.');}if(!raw||typeof raw!=='object'||Array.isArray(raw))throw new Error('Kayıt bir oyun verisi olmalı.');
+ if(Number(raw.version)>CONFIG.version)throw new Error('Bu kayıt daha yeni bir oyun sürümüne ait.');
+ if(!['cash','money','cases','staff','hires'].some(k=>Object.hasOwn(raw,k)))throw new Error('Law Firm Tycoon kaydı bulunamadı.');
+ return hydrate(raw,now);
+}
+function loadGame(storage,now=Date.now()){
+ let damaged=false;
+ for(const key of [CONFIG.saveKey,CONFIG.saveKey+'-backup',...CONFIG.legacy]){
+  try{const text=storage.getItem(key);if(text){const state=parseSave(text,now);return {state,message:key===CONFIG.saveKey?'':damaged?'Hasarlı kaydın yerine sağlam yedek yüklendi.':'Önceki kayıt v0.7’ye aktarıldı.'};}}catch{damaged=true;}
+ }
+ return {state:fresh(now),message:damaged?'Kayıt okunamadı. Yeni oturum açıldı; eski kayıtlar silinmedi.':''};
+}
+function persistGame(storage,state){
+ const text=JSON.stringify(state);const previous=storage.getItem(CONFIG.saveKey);
+ if(previous){try{parseSave(previous);storage.setItem(CONFIG.saveKey+'-backup',previous);}catch{/* Preserve a valid recovery backup when primary is corrupt. */}}
+ storage.setItem(CONFIG.saveKey,text);
+}
+
+const QUESTIONS=[
+  {
+    "id": "q001",
+    "subject": "Anayasa Hukuku",
+    "difficulty": "Temel",
+    "text": "Yasama yetkisi Türk Milleti adına hangi organa aittir?",
+    "options": [
+      "TBMM",
+      "Cumhurbaşkanı",
+      "Danıştay",
+      "Yargıtay",
+      "Anayasa Mahkemesi"
+    ],
+    "answer": 0,
+    "explanation": "Anayasa m.7 yasama yetkisini TBMM’ye verir ve devredilemeyeceğini belirtir.",
+    "reference": "Anayasa — 7",
+    "url": "https://www.anayasa.gov.tr/tr/mevzuat/anayasa/",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q002",
+    "subject": "Anayasa Hukuku",
+    "difficulty": "Temel",
+    "text": "Anayasaya göre yürütme yetkisi ve görevi kim tarafından kullanılır ve yerine getirilir?",
+    "options": [
+      "Yargıtay Cumhuriyet Başsavcısı",
+      "Cumhurbaşkanı",
+      "TBMM Başkanı",
+      "Anayasa Mahkemesi Başkanı",
+      "Sayıştay"
+    ],
+    "answer": 1,
+    "explanation": "m.8 uyarınca yürütme, Anayasa ve kanunlara uygun olarak Cumhurbaşkanınca yürütülür.",
+    "reference": "Anayasa — 8",
+    "url": "https://www.anayasa.gov.tr/tr/mevzuat/anayasa/",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q003",
+    "subject": "Anayasa Hukuku",
+    "difficulty": "Temel",
+    "text": "Yargı yetkisi Türk Milleti adına nasıl mahkemelerce kullanılır?",
+    "options": [
+      "Yalnız idari",
+      "Yalnız tek hâkimli",
+      "Bağımsız ve tarafsız",
+      "Yürütmeye bağlı",
+      "Yalnız seçimle kurulan"
+    ],
+    "answer": 2,
+    "explanation": "m.9 yargı yetkisinin bağımsız ve tarafsız mahkemelerce kullanılmasını öngörür.",
+    "reference": "Anayasa — 9",
+    "url": "https://www.anayasa.gov.tr/tr/mevzuat/anayasa/",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q004",
+    "subject": "Anayasa Hukuku",
+    "difficulty": "Temel",
+    "text": "Anayasa m.4 hangi maddelerdeki hükümleri değiştirme ve değiştirmeyi teklif etme yasağı kapsamında sayar?",
+    "options": [
+      "5, 6 ve 7",
+      "Bütün maddeler",
+      "Yalnız geçici maddeler",
+      "1, 2 ve 3",
+      "Yalnız 1"
+    ],
+    "answer": 3,
+    "explanation": "Yasak; Cumhuriyet şekli, Cumhuriyetin nitelikleri ve m.3 hükümlerini kapsar.",
+    "reference": "Anayasa — 4",
+    "url": "https://www.anayasa.gov.tr/tr/mevzuat/anayasa/",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q005",
+    "subject": "Medeni Hukuk",
+    "difficulty": "Temel",
+    "text": "Özel hukuk uyuşmazlığında uygulanabilir kanun hükmü yoksa hâkim öncelikle hangi kaynağa başvurur?",
+    "options": [
+      "Kendi siyasi tercihi",
+      "Taraflardan güçlü olanın isteği",
+      "Yabancı kanunların tamamı",
+      "Ceza yaptırımları",
+      "Örf ve âdet hukuku"
+    ],
+    "answer": 4,
+    "explanation": "TMK m.1 kanun hükmünün yokluğunda önce örf ve âdet hukukunu gösterir; o da yoksa hâkim hukuk yaratır.",
+    "reference": "4721 sayılı TMK — 1",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103249",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q006",
+    "subject": "Medeni Hukuk",
+    "difficulty": "Temel",
+    "text": "Bir hakkın açıkça kötüye kullanılması için TMK’nın yaklaşımı nedir?",
+    "options": [
+      "Hukuk düzeni korumaz",
+      "Daima korunur",
+      "Sadece ticarette korunur",
+      "Yalnız yazılıysa korunur",
+      "Otomatik olarak suç sayılır"
+    ],
+    "answer": 0,
+    "explanation": "TMK m.2 dürüstlük kuralını ve hakkın açıkça kötüye kullanılmasının korunmayacağını düzenler. Her kötüye kullanım kendiliğinden suç değildir.",
+    "reference": "4721 sayılı TMK — 2",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103249",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q007",
+    "subject": "Medeni Hukuk",
+    "difficulty": "Temel",
+    "text": "Gerekli özeni göstermeyen kişi, kanunun iyiniyete sonuç bağladığı bir olayda neyle karşılaşır?",
+    "options": [
+      "İspat yükü her durumda kalkar",
+      "İyiniyet iddiasında bulunamaz",
+      "Her durumda iyiniyetli sayılır",
+      "Otomatik ergin olur",
+      "Bütün borçları sona erer"
+    ],
+    "answer": 1,
+    "explanation": "TMK m.3 iyiniyet karinesini kabul eder; ancak beklenen özeni göstermeyen kişinin bu iddiasını dışlar.",
+    "reference": "4721 sayılı TMK — 3",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103249",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q008",
+    "subject": "Medeni Hukuk",
+    "difficulty": "Temel",
+    "text": "Kanunun takdir yetkisi tanıdığı bir konuda hâkim hangi ölçüte göre karar verir?",
+    "options": [
+      "Davacının servetine",
+      "Yalnız idarenin talimatına",
+      "Hukuka ve hakkaniyete",
+      "Yalnız kişisel beğenisine",
+      "Yalnız çoğunluk anketine"
+    ],
+    "answer": 2,
+    "explanation": "TMK m.4 takdirin ölçütünü hukuk ve hakkaniyet olarak belirler; sınırsız kişisel tercih değildir.",
+    "reference": "4721 sayılı TMK — 4",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103249",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q009",
+    "subject": "Borçlar Hukuku",
+    "difficulty": "Orta",
+    "text": "Bir sözleşmenin kurulması için temel irade koşulu hangisidir?",
+    "options": [
+      "Her durumda noter onayı",
+      "Her durumda mahkeme kararı",
+      "Sadece bir tanığın bulunması",
+      "Karşılıklı ve birbirine uygun açıklamalar",
+      "Yalnız tek tarafın iç düşüncesi"
+    ],
+    "answer": 3,
+    "explanation": "TBK m.1 karşılıklı, birbirine uygun irade açıklamalarını arar. Açıklama açık veya örtülü olabilir.",
+    "reference": "6098 sayılı TBK — 1",
+    "url": "https://cdn.tbmm.gov.tr/KKBSPublicFile/D23/Y2/T1/KanunMetni/a657b33d-109c-473d-9266-5aa48d603ab2.html",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q010",
+    "subject": "Borçlar Hukuku",
+    "difficulty": "Temel",
+    "text": "Esaslı noktalarda anlaşan tarafların ikinci derecedeki noktaları hiç görüşmemesi, kural olarak ne sonuç doğurur?",
+    "options": [
+      "Sözleşme daima yoktur",
+      "Ceza sorumluluğu doğar",
+      "Taraflar tacir olur",
+      "Mutlaka yeni ihale gerekir",
+      "Sözleşme kurulmuş sayılır"
+    ],
+    "answer": 4,
+    "explanation": "TBK m.2 esaslı noktalarda uyuşmayı yeterli sayar; ikincil noktalar üzerinde durulmaması tek başına kuruluşu engellemez.",
+    "reference": "6098 sayılı TBK — 2",
+    "url": "https://cdn.tbmm.gov.tr/KKBSPublicFile/D23/Y2/T1/KanunMetni/a657b33d-109c-473d-9266-5aa48d603ab2.html",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q011",
+    "subject": "Borçlar Hukuku",
+    "difficulty": "Temel",
+    "text": "Kanun aksini öngörmüyorsa sözleşmenin geçerliliği için şekil kuralı nedir?",
+    "options": [
+      "Hiçbir şekle bağlı değildir",
+      "Mutlaka noter gerekir",
+      "Mutlaka resmî senet gerekir",
+      "Mutlaka iki tanık gerekir",
+      "Mutlaka el yazısı gerekir"
+    ],
+    "answer": 0,
+    "explanation": "TBK m.12 şekil serbestisini esas alır. Özel şekil öngören hükümler saklıdır.",
+    "reference": "6098 sayılı TBK — 12",
+    "url": "https://cdn.tbmm.gov.tr/KKBSPublicFile/D23/Y2/T1/KanunMetni/a657b33d-109c-473d-9266-5aa48d603ab2.html",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q012",
+    "subject": "Borçlar Hukuku",
+    "difficulty": "Orta",
+    "text": "Karşı taraf aleyhine genel işlem koşullarının sözleşmeye girmesi için hangi birleşim aranır?",
+    "options": [
+      "Hiçbir koşul aranmaz",
+      "Bilgilendirme, içeriği öğrenme imkânı ve kabul",
+      "Yalnız küçük puntoyla basım",
+      "Yalnız düzenleyenin imzası",
+      "Yalnız sözleşme başlığı"
+    ],
+    "answer": 1,
+    "explanation": "TBK m.21 bu koşulların varlığı hakkında açık bilgi verilmesini, içeriğin öğrenilebilmesini ve kabulü arar.",
+    "reference": "6098 sayılı TBK — 21",
+    "url": "https://cdn.tbmm.gov.tr/KKBSPublicFile/D23/Y2/T1/KanunMetni/a657b33d-109c-473d-9266-5aa48d603ab2.html",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q013",
+    "subject": "Ticaret Hukuku",
+    "difficulty": "Temel",
+    "text": "Bir ticari işletmeyi kısmen de olsa kendi adına işleten kişi hangi sıfatı taşır?",
+    "options": [
+      "Yalnız kefil",
+      "Hakem",
+      "Tacir",
+      "Her durumda memur",
+      "Yalnız vekil"
+    ],
+    "answer": 2,
+    "explanation": "TTK m.12 gerçek kişi taciri kendi adına ticari işletme işletme ölçütüyle tanımlar.",
+    "reference": "6102 sayılı TTK — 12",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103039",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q014",
+    "subject": "Ticaret Hukuku",
+    "difficulty": "Temel",
+    "text": "Kanuni yasağa rağmen ticari işletme işleten kişinin tacir sıfatı bakımından durumunu hangisi açıklar?",
+    "options": [
+      "Yalnız müşteriler tacir olur",
+      "İşletme otomatik dernek olur",
+      "Tüm borçlar silinir",
+      "Yine tacir sayılır",
+      "Hiçbir zaman tacir olmaz"
+    ],
+    "answer": 3,
+    "explanation": "TTK m.14 yasağa veya gerekli iznin yokluğuna rağmen işletmeyi işleten kişiyi de tacir sayar; diğer sorumluluklar saklıdır.",
+    "reference": "6102 sayılı TTK — 14",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103039",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q015",
+    "subject": "Ticaret Hukuku",
+    "difficulty": "Temel",
+    "text": "TTK m.18’e göre tacirin iflasa tabi olması hangi borçları kapsar?",
+    "options": [
+      "Yalnız ticari satış borcunu",
+      "Yalnız vergi borcunu",
+      "Yalnız kira borcunu",
+      "Hiçbir borcunu",
+      "Her türlü borcunu"
+    ],
+    "answer": 4,
+    "explanation": "Kanun tacirin her türlü borcu için iflasa tabi olduğunu düzenler.",
+    "reference": "6102 sayılı TTK — 18",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103039",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q016",
+    "subject": "Ticaret Hukuku",
+    "difficulty": "Temel",
+    "text": "TTK m.19’daki temel karineye göre tacirin borçları nasıl kabul edilir?",
+    "options": [
+      "Ticari olması asıldır",
+      "Daima bağış sayılır",
+      "Daima kamu borcudur",
+      "Daima geçersizdir",
+      "Daima zamanaşımına uğramıştır"
+    ],
+    "answer": 0,
+    "explanation": "Ticari borç karinesi esastır; gerçek kişi tacir için maddede öngörülen istisnalar saklıdır.",
+    "reference": "6102 sayılı TTK — 19",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103039",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q017",
+    "subject": "Medeni Usul Hukuku",
+    "difficulty": "Temel",
+    "text": "Aksine düzenleme yoksa malvarlığı ve şahıs varlığı haklarına ilişkin davalarda genel görevli mahkeme hangisidir?",
+    "options": [
+      "İdare mahkemesi",
+      "Asliye hukuk mahkemesi",
+      "Vergi mahkemesi",
+      "İcra ceza mahkemesi",
+      "Sulh ceza hâkimliği"
+    ],
+    "answer": 1,
+    "explanation": "HMK m.2 değere ve miktara bakmaksızın asliye hukuku genel görevli sayar; özel görev kuralları saklıdır.",
+    "reference": "6100 sayılı HMK — 2",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103103",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q018",
+    "subject": "Medeni Usul Hukuku",
+    "difficulty": "Temel",
+    "text": "Taraf talebi olmadan hâkimin kendiliğinden dava inceleyip karara bağlayamaması hangi ilkeyle ilgilidir?",
+    "options": [
+      "Yetki genişliği",
+      "İdarenin bütünlüğü",
+      "Tasarruf ilkesi",
+      "Ceza şahsiliği",
+      "Vergi kanuniliği"
+    ],
+    "answer": 2,
+    "explanation": "HMK m.24 tasarruf ilkesini düzenler; davayı açma ve serbestçe tasarruf edilebilir konuda tasarruf taraflara aittir.",
+    "reference": "6100 sayılı HMK — 24",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103103",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q019",
+    "subject": "Medeni Usul Hukuku",
+    "difficulty": "Orta",
+    "text": "Kanuni istisna dışında hâkimin tarafların ileri sürmediği vakıaları kendiliğinden dikkate alamaması hangi ilkedir?",
+    "options": [
+      "Vergide genellik",
+      "Suçta kanunilik",
+      "İdari vesayet",
+      "Taraflarca getirilme",
+      "Resen araştırmanın sınırsızlığı"
+    ],
+    "answer": 3,
+    "explanation": "HMK m.25, kanuni istisnalar dışında vakıa ve delillerin taraflarca getirilmesini esas alır.",
+    "reference": "6100 sayılı HMK — 25",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103103",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q020",
+    "subject": "Medeni Usul Hukuku",
+    "difficulty": "Orta",
+    "text": "Kanuni istisna bulunmayan bir davada talep edilen miktardan daha fazlasına karar verilebilir mi?",
+    "options": [
+      "Evet; her zaman",
+      "Yalnız davacı zenginse",
+      "Yalnız davalı gelmezse",
+      "Yalnız dosya kalınsa",
+      "Hayır; talep sonucu ile bağlılık vardır"
+    ],
+    "answer": 4,
+    "explanation": "HMK m.26 hâkimi talep sonucuyla bağlar. Gerektiğinde daha azına karar verilebilir, fazlasına veya başka şeye verilemez.",
+    "reference": "6100 sayılı HMK — 26",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103103",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q021",
+    "subject": "İcra ve İflas Hukuku",
+    "difficulty": "Temel",
+    "text": "Genel haciz yoluyla ilamsız takipte olağan borca itiraz süresi, ödeme emrinin tebliğinden itibaren kaç gündür?",
+    "options": [
+      "7",
+      "3",
+      "5",
+      "10",
+      "30"
+    ],
+    "answer": 0,
+    "explanation": "İİK m.62 genel haciz yolunda yedi günlük süreyi öngörür. Diğer takip yollarının süreleri farklı olabilir.",
+    "reference": "İİK 62 ve 66 hakkında yargı kararı — İİK 62",
+    "url": "https://mevzuat.adalet.gov.tr/ictihat/1218215200",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q022",
+    "subject": "İcra ve İflas Hukuku",
+    "difficulty": "Temel",
+    "text": "Genel haciz yoluyla ilamsız takipte süresinde borca itirazın temel etkisi nedir?",
+    "options": [
+      "Takip aynı şekilde kesinleşir",
+      "Takip kendiliğinden durur",
+      "Borç kesin olarak ortadan kalkar",
+      "Alacaklı otomatik hapse girer",
+      "Borçlu otomatik iflas eder"
+    ],
+    "answer": 1,
+    "explanation": "İİK m.66 uyarınca süresinde itiraz takibi durdurur; alacağın maddi hukuk bakımından yokluğunu kesinleştirmez.",
+    "reference": "İİK 62 ve 66 hakkında yargı kararı — İİK 66",
+    "url": "https://mevzuat.adalet.gov.tr/ictihat/1218215200",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q023",
+    "subject": "Ceza Hukuku",
+    "difficulty": "Temel",
+    "text": "Suçun kanuni tanımındaki unsurların bilerek ve istenerek gerçekleştirilmesi hangi kavramdır?",
+    "options": [
+      "Af",
+      "Şikâyetten vazgeçme",
+      "Kast",
+      "Basit taksir",
+      "Zamanaşımı"
+    ],
+    "answer": 2,
+    "explanation": "TCK m.21 kastı bilme ve isteme unsurlarıyla tanımlar.",
+    "reference": "5237 sayılı TCK — 21",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103228",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q024",
+    "subject": "Ceza Hukuku",
+    "difficulty": "Temel",
+    "text": "Taksirle işlenen fiiller hangi durumda cezalandırılır?",
+    "options": [
+      "Yalnız mağdur isterse",
+      "Yalnız basına yansırsa",
+      "Hiçbir zaman",
+      "Kanun açıkça belirttiğinde",
+      "Her zaman"
+    ],
+    "answer": 3,
+    "explanation": "TCK m.22/1 taksir sorumluluğu için kanunda açık düzenleme arar.",
+    "reference": "5237 sayılı TCK — 22/1",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103228",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q025",
+    "subject": "Ceza Hukuku",
+    "difficulty": "Orta",
+    "text": "Failin öngördüğü neticeyi istememesine karşın neticenin meydana gelmesi hangi kavramın tanımıdır?",
+    "options": [
+      "Doğrudan kast",
+      "İştirak",
+      "İçtima",
+      "Müsadere",
+      "Bilinçli taksir"
+    ],
+    "answer": 4,
+    "explanation": "TCK m.22/3 bilinçli taksiri bu şekilde tanımlar. Neticeyi öngörmek ile istemek aynı değildir.",
+    "reference": "5237 sayılı TCK — 22/3",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103228",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q026",
+    "subject": "Ceza Hukuku",
+    "difficulty": "Orta",
+    "text": "Haksız saldırıyı o anda koşullara göre orantılı biçimde defetme zorunluluğuyla işlenen fiil hangi kurumla ilgilidir?",
+    "options": [
+      "Meşru savunma",
+      "Genel af",
+      "Uzlaşma",
+      "Zamanaşımı",
+      "Şikâyetten vazgeçme"
+    ],
+    "answer": 0,
+    "explanation": "TCK m.25/1, gerçekleşen veya gerçekleşmesi ya da tekrarı muhakkak saldırıya karşı orantılı savunmayı düzenler.",
+    "reference": "5237 sayılı TCK — 25/1",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103228",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q027",
+    "subject": "Ceza Muhakemesi Hukuku",
+    "difficulty": "Temel",
+    "text": "Kamu davası hangi işlemle açılmış olur ve kovuşturma evresi başlar?",
+    "options": [
+      "Şüphelinin adres değiştirmesi",
+      "İddianamenin kabulü",
+      "İhbarın yapılması",
+      "İlk tanığın bulunması",
+      "Kolluğun tutanak yazması"
+    ],
+    "answer": 1,
+    "explanation": "CMK m.175 kamu davasının açılışını iddianamenin kabulüne bağlar.",
+    "reference": "5271 sayılı CMK — 175",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/102946?query=Madde+74",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q028",
+    "subject": "Ceza Muhakemesi Hukuku",
+    "difficulty": "Temel",
+    "text": "İfade veya sorguda şüpheliye hangi hak bildirilir?",
+    "options": [
+      "Delilleri yok etme",
+      "Tanığa emir verme",
+      "Müdafi seçme ve yardımından yararlanma",
+      "Hâkimi görevden alma",
+      "Kanunu değiştirme"
+    ],
+    "answer": 2,
+    "explanation": "CMK m.147/1-c müdafi seçme ve hukuki yardım hakkının bildirilmesini düzenler.",
+    "reference": "5271 sayılı CMK — 147/1-c",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/102946?query=Madde+74",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q029",
+    "subject": "İdare Hukuku",
+    "difficulty": "Temel",
+    "text": "İdarenin kuruluş ve görevleriyle bir bütün olması Anayasa’da hangi çerçeveye bağlanmıştır?",
+    "options": [
+      "Yalnız gelenekle belirlenme",
+      "Yalnız şirket kararıyla düzenlenme",
+      "Her birimin sınırsız bağımsızlığı",
+      "Kanunla düzenlenme",
+      "Yalnız özel sözleşmeyle kurulma"
+    ],
+    "answer": 3,
+    "explanation": "Anayasa m.123 idarenin bütünlüğünü ve kanunla düzenlenmesini esas alır.",
+    "reference": "Anayasa — 123",
+    "url": "https://www.anayasa.gov.tr/tr/mevzuat/anayasa/",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q030",
+    "subject": "İdare Hukuku",
+    "difficulty": "Temel",
+    "text": "Yönetmeliklerin kanunlar ve Cumhurbaşkanlığı kararnameleriyle ilişkisi nasıl olmalıdır?",
+    "options": [
+      "Her zaman bunları kaldırmalıdır",
+      "Anayasa yerine geçmelidir",
+      "Kanunları otomatik değiştirmelidir",
+      "Hiçbir ilişkisi yoktur",
+      "Bunlara aykırı olmamalıdır"
+    ],
+    "answer": 4,
+    "explanation": "m.124, görev alanıyla ilgili üst düzenlemelerin uygulanmasını sağlamak ve onlara aykırı olmamak koşulunu arar.",
+    "reference": "Anayasa — 124",
+    "url": "https://www.anayasa.gov.tr/tr/mevzuat/anayasa/",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q031",
+    "subject": "İdare Hukuku",
+    "difficulty": "Temel",
+    "text": "Anayasa m.124’te yönetmelik çıkarabilecekler arasında hangisi açıkça yer alır?",
+    "options": [
+      "Bakanlıklar",
+      "Her gerçek kişi",
+      "Her aile",
+      "Her apartman sakini",
+      "Her özel müşteri"
+    ],
+    "answer": 0,
+    "explanation": "Cumhurbaşkanı, bakanlıklar ve kamu tüzelkişileri m.124’te sayılır. Yetki kendi görev alanıyla sınırlıdır.",
+    "reference": "Anayasa — 124",
+    "url": "https://www.anayasa.gov.tr/tr/mevzuat/anayasa/",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q032",
+    "subject": "İdare Hukuku",
+    "difficulty": "Temel",
+    "text": "İdarenin eylem ve işlemleri için Anayasa m.125’in ilk cümlesindeki temel kural nedir?",
+    "options": [
+      "Yalnız özel hakem karar verir",
+      "Yargı yolu açıktır",
+      "Yargı denetimi yasaktır",
+      "Yalnız sözlü itiraz mümkündür",
+      "Yalnız seçimle değişebilir"
+    ],
+    "answer": 1,
+    "explanation": "m.125’in temel kuralı yargı yolunun açık olmasıdır; anayasal istisna ve özel düzenlemeler ayrıca değerlendirilir.",
+    "reference": "Anayasa — 125",
+    "url": "https://www.anayasa.gov.tr/tr/mevzuat/anayasa/",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q033",
+    "subject": "İdari Yargılama Usulü",
+    "difficulty": "Temel",
+    "text": "İdari işlemin yetki, şekil, sebep, konu veya maksat yönünden hukuka aykırılığı iddiasıyla hangi dava açılır?",
+    "options": [
+      "Mirasın reddi",
+      "Ceza davası",
+      "İptal davası",
+      "Boşanma davası",
+      "İflas davası"
+    ],
+    "answer": 2,
+    "explanation": "İYUK m.2/1-a menfaatleri ihlal edilenlerin açtığı iptal davasını tanımlar.",
+    "reference": "2577 sayılı İYUK — 2/1-a",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103161",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q034",
+    "subject": "İdari Yargılama Usulü",
+    "difficulty": "Temel",
+    "text": "İdari eylem veya işlem nedeniyle kişisel hakkı doğrudan zarar görenin zararının giderilmesine yönelik dava hangisidir?",
+    "options": [
+      "Soybağı davası",
+      "İzale-i şuyu",
+      "Ceza davası",
+      "Tam yargı davası",
+      "Vesayet davası"
+    ],
+    "answer": 3,
+    "explanation": "İYUK m.2/1-b tam yargı davalarını idari eylem ve işlemlerden doğan kişisel hak ihlalleri üzerinden tanımlar.",
+    "reference": "2577 sayılı İYUK — 2/1-b",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103161",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q035",
+    "subject": "İdari Yargılama Usulü",
+    "difficulty": "Temel",
+    "text": "İdari yargı merciinin hukuka uygunluk denetimi dışında yapamayacağı denetim hangisidir?",
+    "options": [
+      "Yetki denetimi",
+      "Şekil denetimi",
+      "Sebep denetimi",
+      "Maksat denetimi",
+      "Yerindelik denetimi"
+    ],
+    "answer": 4,
+    "explanation": "İYUK m.2/2 yerindelik denetimini yasaklar. Mahkeme idarenin yerine geçerek takdir kullanamaz.",
+    "reference": "2577 sayılı İYUK — 2/2",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103161",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q036",
+    "subject": "İdari Yargılama Usulü",
+    "difficulty": "Temel",
+    "text": "İYUK m.1/2’ye göre idari yargıda temel yargılama usulü hangisidir?",
+    "options": [
+      "Yazılı yargılama ve evrak üzerinde inceleme",
+      "Her işte jüri yargılaması",
+      "Yalnız telefonla görüşme",
+      "Yalnız arabuluculuk",
+      "Yalnız noter incelemesi"
+    ],
+    "answer": 0,
+    "explanation": "Temel usul yazılıdır; kanundaki duruşmaya ilişkin hükümler bu temel kuralı ortadan kaldırmaz.",
+    "reference": "2577 sayılı İYUK — 1/2",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103161",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q037",
+    "subject": "İş Hukuku",
+    "difficulty": "Temel",
+    "text": "İş sözleşmesinin işçi yönünden ayırt edici unsuru hangisidir?",
+    "options": [
+      "Mutlaka kamu görevlisi olma",
+      "Bağımlı olarak iş görme",
+      "Mutlaka şirket ortağı olma",
+      "Her zaman ücretsiz çalışma",
+      "Yalnız kendi hesabına satış"
+    ],
+    "answer": 1,
+    "explanation": "4857 m.8, bağımlı iş görme ve bunun karşılığında ücret ödeme borçları üzerinden tanım yapar.",
+    "reference": "4857 sayılı İş Kanunu — 8",
+    "url": "https://www.csgb.gov.tr/Media/crldhi51/4857-say%C4%B1l%C4%B1-i%C5%9F-kanunu.pdf",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q038",
+    "subject": "İş Hukuku",
+    "difficulty": "Temel",
+    "text": "Toplu iş sözleşmesiyle uzatma bulunmadığında deneme süresi en çok ne kadardır?",
+    "options": [
+      "1 yıl",
+      "Sınırsız",
+      "2 ay",
+      "1 hafta",
+      "6 ay"
+    ],
+    "answer": 2,
+    "explanation": "m.15 genel üst sınırı iki ay belirler; toplu iş sözleşmesiyle dört aya kadar uzatma mümkündür.",
+    "reference": "4857 sayılı İş Kanunu — 15",
+    "url": "https://www.csgb.gov.tr/Media/crldhi51/4857-say%C4%B1l%C4%B1-i%C5%9F-kanunu.pdf",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q039",
+    "subject": "İş Hukuku",
+    "difficulty": "Temel",
+    "text": "4857 kapsamında yıllık ücretli izin hakkından önceden vazgeçilmesine ilişkin kural nedir?",
+    "options": [
+      "Yalnız işveren isterse vazgeçilir",
+      "Ücret iki kat ise otomatik kalkar",
+      "Sadece stajyerler vazgeçemez",
+      "Bu haktan vazgeçilemez",
+      "Her zaman sözlü vazgeçilir"
+    ],
+    "answer": 3,
+    "explanation": "m.53 yıllık ücretli izin hakkından vazgeçilemeyeceğini açıkça belirtir.",
+    "reference": "4857 sayılı İş Kanunu — 53",
+    "url": "https://www.csgb.gov.tr/Media/crldhi51/4857-say%C4%B1l%C4%B1-i%C5%9F-kanunu.pdf",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q040",
+    "subject": "İş Hukuku",
+    "difficulty": "Temel",
+    "text": "Özel çalışma süresi düzenlemeleri dışında genel haftalık üst sınır kaç saattir?",
+    "options": [
+      "30",
+      "35",
+      "50",
+      "60",
+      "45"
+    ],
+    "answer": 4,
+    "explanation": "m.63 genel bakımdan haftalık çalışma süresini en çok 45 saat belirler. Özel düzenlemeler saklıdır.",
+    "reference": "4857 sayılı İş Kanunu — 63",
+    "url": "https://www.csgb.gov.tr/Media/crldhi51/4857-say%C4%B1l%C4%B1-i%C5%9F-kanunu.pdf",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q041",
+    "subject": "Vergi Hukuku",
+    "difficulty": "Temel",
+    "text": "Vergi alacağının kanuni matrah ve oranlara göre miktar olarak hesaplanıp belirlenmesi hangi işlemdir?",
+    "options": [
+      "Tarh",
+      "Tahsil",
+      "Terkin",
+      "Af",
+      "Zamanaşımı"
+    ],
+    "answer": 0,
+    "explanation": "VUK m.20’deki tarh, vergi alacağının miktar olarak belirlenmesidir; ödemenin gerçekleşmesi değildir.",
+    "reference": "GİB tarhiyat rehberi — VUK 20 ve 22 — VUK 20",
+    "url": "https://cdn.gib.gov.tr/api/gibportal-file/file/getFileResources?objectKey=arsiv%2Fonceki-dokumanlar%2F2011_tarhiyatlarda_idari.pdf",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q042",
+    "subject": "Vergi Hukuku",
+    "difficulty": "Temel",
+    "text": "Tarh ve tebliğ edilen verginin ödenmesi gereken aşamaya gelmesi ne olarak adlandırılır?",
+    "options": [
+      "İbra",
+      "Tahakkuk",
+      "Tescil",
+      "Haciz",
+      "Müsadere"
+    ],
+    "answer": 1,
+    "explanation": "VUK m.22’de tahakkuk, verginin ödenecek aşamaya gelmesidir; fiilî tahsil ile aynı kavram değildir.",
+    "reference": "GİB tarhiyat rehberi — VUK 20 ve 22 — VUK 22",
+    "url": "https://cdn.gib.gov.tr/api/gibportal-file/file/getFileResources?objectKey=arsiv%2Fonceki-dokumanlar%2F2011_tarhiyatlarda_idari.pdf",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q043",
+    "subject": "Hukuk Tarihi",
+    "difficulty": "Temel",
+    "text": "Türk anayasa tarihinde ilk anayasa olarak kabul edilen metin hangisidir?",
+    "options": [
+      "1982 Anayasası",
+      "1839 Tanzimat Fermanı",
+      "1876 Kanun-ı Esasi",
+      "1924 Anayasası",
+      "1961 Anayasası"
+    ],
+    "answer": 2,
+    "explanation": "TBMM anayasa tarihi sayfası 23 Aralık 1876’da kabul edilen Kanun-ı Esasi’yi ilk anayasa olarak belirtir. Tanzimat Fermanı anayasal gelişimde önemli olmakla birlikte bu metin değildir.",
+    "reference": "TBMM anayasa tarihi — 1876",
+    "url": "https://www.tbmm.gov.tr/anayasa/yetmis-alti-kanuni-esasi",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q044",
+    "subject": "Hukuk Tarihi",
+    "difficulty": "Temel",
+    "text": "TBMM tarihçe sayfasına göre Kanun-ı Esasi taslağını hazırlayan komisyon hangi iki anayasadan esinlenmiştir?",
+    "options": [
+      "1924 Türkiye ve 1961 Türkiye",
+      "1787 ABD ve 1982 Türkiye",
+      "1919 Almanya ve 1947 İtalya",
+      "1875 Fransa ve 1831 Belçika",
+      "1982 Türkiye ve 1949 Almanya"
+    ],
+    "answer": 3,
+    "explanation": "TBMM tarihçesi komisyonun 1875 Fransa ve 1831 Belçika anayasalarından esinlendiğini belirtir.",
+    "reference": "TBMM anayasa tarihi — 1876 hazırlığı",
+    "url": "https://www.tbmm.gov.tr/anayasa/yetmis-alti-kanuni-esasi",
+    "reviewedAt": "2026-10-10"
+  }
+];
+
+function localDayKey(now){const d=new Date(now);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+function freshExpansion(now){return {officeTier:0,legacyRent:-1,fixtureLevels:Object.fromEntries(FIXTURES.map(f=>[f.id,0])),personalCash:0,withdrawnLifetime:0,distributableProfit:0,reserveFloor:500,cars:[],homes:[],currentCar:'',primaryHome:'',happyDay:localDayKey(now),happyUses:0,happyEndsAt:0,clockNow:now,quiz:{records:{},recent:[],current:null,seed:913,rewardDay:localDayKey(now),rewards:0}};}
+const currentOffice=s=>OFFICES[s.officeTier];
+const officeRent=s=>s.legacyRent>=0?s.legacyRent:currentOffice(s).rent;
+const fixtureCache=new WeakMap();
+function fixtureEffects(s){const cached=fixtureCache.get(s.fixtureLevels);if(cached)return cached;const e={productivity:0,speed:0,satisfaction:0,reputation:0,upkeep:0};for(const f of FIXTURES){const level=s.fixtureLevels[f.id]||0;for(const k of Object.keys(e))e[k]+=level*f[k];}e.productivity=Math.min(.65,e.productivity);e.speed=Math.min(.35,e.speed);e.satisfaction=Math.min(35,e.satisfaction);e.reputation=Math.min(10,e.reputation);fixtureCache.set(s.fixtureLevels,e);return e;}
+const employeeSatisfaction=s=>Math.min(100,60+fixtureEffects(s).satisfaction+(happyMultiplier(s)>1?5:0));
+const fixtureCost=(s,f)=>Math.round(f.cost*2.8**(s.fixtureLevels[f.id]||0));
+function upgradeFixture(s,id){const f=FIXTURES.find(x=>x.id===id);if(!f||s.officeTier<f.office||(s.fixtureLevels[id]||0)>=f.max||!spend(s,fixtureCost(s,f)))return false;s.fixtureLevels={...s.fixtureLevels,[id]:(s.fixtureLevels[id]||0)+1};s.dailyCounts.upgrade++;log(s,f.name+' geliştirildi.');return true;}
+function moveOffice(s,id){const o=OFFICES[id];if(!Number.isInteger(id)||!o||id!==s.officeTier+1||s.reputation<o.rep||!spend(s,o.cost))return false;s.officeTier=id;s.legacyRent=-1;s.office=Math.max(s.office,id);s.dailyCounts.upgrade++;log(s,o.name+' adresine taşınıldı.');return true;}
+function refreshHappyDay(s,now){s.clockNow=Math.max(s.clockNow,now);const day=localDayKey(s.clockNow);if(day>s.happyDay){s.happyDay=day;s.happyUses=0;}if(day>s.quiz.rewardDay){s.quiz.rewardDay=day;s.quiz.rewards=0;}}
+const happyMultiplier=s=>s.clockNow<s.happyEndsAt?EXPANSION.happyMultiplier:1;
+function startHappy(s,now=Date.now()){refreshHappyDay(s,now);if(now<s.clockNow-1000||s.happyUses>=EXPANSION.happyDailyLimit||happyMultiplier(s)>1)return false;s.happyUses++;s.happyEndsAt=s.clockNow+EXPANSION.happyDuration*1000;log(s,'Happy Hour başladı: 5 dakika üretim ve dosya tahsilatı ×2.');return true;}
+const reserveAmount=s=>Math.max(s.reserveFloor,Math.ceil(expenseRate(s)*EXPANSION.reserveSeconds));
+const maxWithdrawal=s=>Math.floor(Math.max(0,Math.min(s.distributableProfit,s.cash-reserveAmount(s))));
+function withdraw(s,amount){if(!Number.isFinite(amount)||!Number.isInteger(amount)||amount<=0||amount>maxWithdrawal(s))return false;s.cash-=amount;s.distributableProfit-=amount;s.personalCash+=amount;s.withdrawnLifetime+=amount;return true;}
+function buyAsset(s,kind,id){if(!['cars','homes'].includes(kind))return false;const a=(kind==='cars'?CARS:HOMES).find(a=>a.id===id);if(!a||s[kind].includes(id)||s.officeTier<a.office||s.personalCash<a.cost)return false;s.personalCash-=a.cost;s[kind].push(id);s[kind==='cars'?'currentCar':'primaryHome']=id;return true;}
+function selectAsset(s,kind,id){if(!['cars','homes'].includes(kind)||!s[kind].includes(id))return false;s[kind==='cars'?'currentCar':'primaryHome']=id;return true;}
+function quizStats(s){const stats={total:0,correct:0,subjects:{}};for(const q of QUESTIONS){const r=s.quiz.records[q.id];if(!r)continue;stats.total+=r.attempts;stats.correct+=r.correct;const sub=stats.subjects[q.subject]??={total:0,correct:0};sub.total+=r.attempts;sub.correct+=r.correct;}stats.incorrect=stats.total-stats.correct;return stats;}
+function nextQuestion(s){if(s.quiz.current&&!s.quiz.current.answered)return QUESTIONS.find(q=>q.id===s.quiz.current.id);const stats=quizStats(s);const pool=QUESTIONS.filter(q=>!s.quiz.recent.slice(-Math.min(8,QUESTIONS.length-1)).includes(q.id));const candidates=pool.length?pool:QUESTIONS;let best=null,bestScore=-Infinity;for(const q of candidates){const r=s.quiz.records[q.id],sub=stats.subjects[q.subject];s.quiz.seed=(s.quiz.seed*1664525+1013904223)>>>0;const score=(!r?10:r.lastCorrect?0:6)+(sub?2*(1-sub.correct/sub.total):1)+s.quiz.seed/4294967296;if(score>bestScore){best=q;bestScore=score;}}s.quiz.current={id:best.id,answered:false,choice:null};return best;}
+function answerQuestion(s,choice,now=Date.now()){const c=s.quiz.current,q=QUESTIONS.find(q=>q.id===c?.id);if(!q||c.answered||!Number.isInteger(choice)||choice<0||choice>4)return null;refreshHappyDay(s,now);const correct=q.answer===choice;c.answered=true;c.choice=choice;const r=s.quiz.records[q.id]??={attempts:0,correct:0,lastCorrect:false};r.attempts++;r.correct+=Number(correct);r.lastCorrect=correct;s.quiz.recent.push(q.id);s.quiz.recent=s.quiz.recent.slice(-30);let reward=0;if(correct&&r.attempts===1&&s.quiz.rewards<EXPANSION.quizDailyRewards){reward=EXPANSION.quizReward;credit(s,reward,'bonusRevenue');s.quiz.rewards++;}return {correct,reward};}
+function sanitizeExpansion(s,raw,now){
+ const integer=(v,max=1e15)=>Math.floor(finite(v,0,max));if([4,5,6,7].includes(raw.version))s.cash=finite(raw.cash,-1e15,1e15,500);
+ s.officeTier=integer(raw.version===7?raw.officeTier:Math.min(s.office,11),11);
+ s.legacyRent=raw.version===7?finite(raw.legacyRent,-1,1e15,-1):60+s.office*300;
+ s.fixtureLevels=Object.fromEntries(FIXTURES.map(f=>[f.id,integer(raw.fixtureLevels?.[f.id],f.max)]));
+ for(const k of ['personalCash','withdrawnLifetime','reserveFloor'])s[k]=finite(raw[k],0,1e15,k==='reserveFloor'?500:0);
+ // No invented historical profit: earlier saves accumulate distributable profit from migration onward.
+ s.distributableProfit=finite(raw.distributableProfit,-1e15,1e15,0);
+ for(const [kind,catalog,selected] of [['cars',CARS,'currentCar'],['homes',HOMES,'primaryHome']]){s[kind]=Array.isArray(raw[kind])?[...new Set(raw[kind].filter(id=>catalog.some(a=>a.id===id)))]:[];s[selected]=s[kind].includes(raw[selected])?raw[selected]:s[kind][0]||'';}
+ s.clockNow=finite(raw.clockNow,0,8.64e15,Math.min(now,s.savedAt));s.happyDay=/^\d{4}-\d{2}-\d{2}$/.test(raw.happyDay)?raw.happyDay:localDayKey(s.clockNow);s.happyUses=integer(raw.happyUses,3);s.happyEndsAt=finite(raw.happyEndsAt,0,s.clockNow+EXPANSION.happyDuration*1000);
+ const q=raw.quiz||{},records={};for(const question of QUESTIONS){const r=q.records?.[question.id];if(r&&typeof r==='object'){const attempts=integer(r.attempts,1e9);records[question.id]={attempts,correct:integer(r.correct,attempts),lastCorrect:r.lastCorrect===true};}}
+ s.quiz={records,recent:Array.isArray(q.recent)?q.recent.filter(id=>QUESTIONS.some(x=>x.id===id)).slice(-30):[],current:null,seed:integer(q.seed,4294967295)||913,rewardDay:/^\d{4}-\d{2}-\d{2}$/.test(q.rewardDay)?q.rewardDay:localDayKey(now),rewards:integer(q.rewards,EXPANSION.quizDailyRewards)};
+ if(QUESTIONS.some(x=>x.id===q.current?.id)){const c=q.current;s.quiz.current={id:c.id,answered:c.answered===true,choice:Number.isInteger(c.choice)&&c.choice>=0&&c.choice<=4?c.choice:null};if(s.quiz.current.answered&&s.quiz.current.choice===null)s.quiz.current=null;}
+}
+
+let subscreen='',quizChoice=null;
+function scene(kind,index,color='#c9ad79'){let shapes='';if(kind==='car'){const roof=64-index%4*3,front=143+index%3*5;shapes=`<path d="M40 89L63 ${roof}H${front}L180 90L201 97V119H29V100Z" fill="${color}"/><path d="M71 ${roof+4}H106V89H54ZM113 ${roof+4}H${front-4}L164 89H113Z" fill="#14283d"/><circle cx="64" cy="118" r="16" fill="#07131f"/><circle cx="165" cy="118" r="16" fill="#07131f"/><circle cx="64" cy="118" r="7" fill="#8296a9"/><circle cx="165" cy="118" r="7" fill="#8296a9"/>`;}else {const floors=2+index%5,w=kind==='home'?122:80,x=(240-w)/2,h=40+floors*12;shapes=`<path d="M${x-12} ${143-h}L120 ${122-h}L${x+w+12} ${143-h}" fill="${color}"/><rect x="${x}" y="${143-h}" width="${w}" height="${h}" rx="3" fill="${color}"/>`;for(let row=0;row<floors;row++)for(let col=0;col<3;col++)shapes+=`<rect x="${x+10+col*(w-15)/3}" y="${153-h+row*13}" width="12" height="7" fill="#193548"/>`;shapes+='<rect x="110" y="120" width="20" height="23" fill="#14283d"/>'; }return `<svg class="asset-art" viewBox="0 0 240 155" role="img" aria-label="Özgün ${kind==='car'?'otomobil':'bina'} silüeti"><circle cx="192" cy="30" r="15" fill="#dec28b" opacity=".5"/><path d="M0 144H240" stroke="#608e92"/>${shapes}</svg>`;}
+function officeExpansionPanel(){const o=currentOffice(s),active=happyMultiplier(s)>1;return `<section class="panel expansion-hero"><div><span class="eyebrow">İSTANBUL · ${s.officeTier+1} / 12</span><h2>${o.name}</h2><p>${staffCount(s)} / ${o.capacity} hukukçu · ${s.departments.filter(n=>n>0).length} / ${o.departments} departman</p><button class="action" data-screen="offices">🏢 Ofisi Büyüt / Taşın</button></div>${scene('office',s.officeTier,o.color)}</section><section class="panel ${active?'happy-active':''}"><div class="flex"><div><h3>✨ Happy Hour</h3><p>${active?'Etkin · '+Math.max(0,Math.ceil((s.happyEndsAt-s.clockNow)/1000))+' sn kaldı':'5 dakika boyunca üretim ve dosya ücretleri ×2'}</p><p>Bugün ${3-s.happyUses} / 3 hak · Çalışan memnuniyeti +5</p></div><button class="action" data-happy ${active||s.happyUses>=3?'disabled':''}>${active?'Etkin':'Başlat'}</button></div><p class="fine">Haklar cihazının yerel gece yarısında yenilenir. Süre, oyun kapalıyken de işler. Planlama oturumuyla çarpanlar üst üste eklenmez.</p></section>`;}
+function officesScreen(){const current=currentOffice(s);return `<h2>🏢 Ofisi Büyüt / Taşın</h2><p>Kurgusal ofis portföyü; semtler hakkında bir değer yargısı veya gerçek emlak fiyatı değildir. Taşınırken ekibin ve yatırımların korunur.</p><p class="panel">Şimdi: <b>${current.name}</b> · Aylık kira ${money(officeRent(s))}. Bir oyun ayı 10 dakikadır.${s.legacyRent>=0?' Eski kaydındaki kira bir sonraki taşınmana kadar korunur.':''}</p><div class="asset-grid">${OFFICES.map((o,i)=>{const next=i===s.officeTier+1,owned=i<=s.officeTier;return `<article class="panel asset-card ${i===s.officeTier?'current':''}">${scene('office',i,o.color)}<span class="eyebrow">DURAK ${i+1} · ${o.prestige} PRESTİJ</span><h3>${o.name}</h3><p>${o.capacity} hukukçu · ${o.departments} departman<br>Aylık kira: ${money(o.rent)}<br>Üretim +%${(o.productivity*100).toLocaleString('tr-TR',{maximumFractionDigits:1})} · Müvekkil değeri +%${Math.round(o.clients*100)}<br>İtibar gereksinimi: ${o.rep}</p>${next?`<p class="fine">Mevcut ofise göre kapasite +${o.capacity-current.capacity}, kira +${money(o.rent-officeRent(s))}/ay</p>`:''}<button class="action" data-move="${i}" ${!next||s.cash<o.cost||s.reputation<o.rep?'disabled':''}>${i===s.officeTier?'Mevcut ofis':owned?'Önceki durak':!next?'🔒 Sırayla açılır':s.reputation<o.rep?'🔒 İtibar '+o.rep:'Taşın · '+money(o.cost)}</button></article>`;}).join('')}</div>`;}
+function fixturesPanel(){const e=fixtureEffects(s);return `<h2>🛋 Demirbaşlar ve çalışan olanakları</h2><div class="panel accent"><p>Çalışan memnuniyeti ${employeeSatisfaction(s).toFixed(0)}/100 · Üretim +%${Math.round(e.productivity*100)} · Araştırma hızı +%${Math.round(e.speed*100)} · Başarı hesabına itibar +${e.reputation}</p><p class="fine">Üretim katkısı %65, araştırma hızı %35 ve itibar katkısı 10 ile sınırlıdır. Her yatırım taşınırken korunur.</p></div><div class="asset-grid">${FIXTURES.map(f=>{const level=s.fixtureLevels[f.id]||0,locked=s.officeTier<f.office;return `<article class="panel"><h3>${f.name}</h3><p>Seviye ${level} / ${f.max} · Ofis ${f.office+1} gerekir</p><p class="fine">Her seviye: üretim +%${(f.productivity*100).toLocaleString('tr-TR',{maximumFractionDigits:1})}, hız +%${(f.speed*100).toLocaleString('tr-TR',{maximumFractionDigits:1})}, memnuniyet +${f.satisfaction}, itibar +${f.reputation}. Gider +${rateMoney(f.upkeep)}/sn.</p><button class="action secondary" data-fixture="${f.id}" ${locked||level>=f.max||s.cash<fixtureCost(s,f)?'disabled':''}>${locked?'🔒 Ofis '+(f.office+1):level>=f.max?'Tamamlandı':(level?'Geliştir':'Satın al')+' · '+money(fixtureCost(s,f))}</button></article>`;}).join('')}</div>`;}
+function profileExpansionPanel(){return `<section class="panel accent"><span class="eyebrow">BÜRONUN ÖTESİNDE</span><h2>Kişisel hayat ve öğrenme</h2><p>Kişisel bakiye: <b>${money(s.personalCash)}</b> · Toplam çekiş: ${money(s.withdrawnLifetime)}</p><div class="mode-options"><button class="action" data-screen="life">🏡 Kişisel Hayat</button><button class="action secondary" data-screen="quiz">📚 Rastgele HMGS</button></div><p class="fine">HMGS isteğe bağlıdır. Sorular yalnızca bu ekranı açtığında gösterilir.</p></section>`;}
+function lifeScreen(){const car=CARS.find(a=>a.id===s.currentCar),home=HOMES.find(a=>a.id===s.primaryHome);return `<h2>🏡 Kişisel Hayat</h2><section class="panel accent"><span class="eyebrow">KİŞİSEL HESAP</span><h2>${money(s.personalCash)}</h2><p>Şirket kasası: ${money(s.cash)} · Dağıtılabilir kâr: ${money(Math.max(0,s.distributableProfit))}</p><p>Korunan rezerv: ${money(reserveAmount(s))} · Çekilebilir: ${money(maxWithdrawal(s))}</p><label>Asgari şirket rezervi (₺)<input id="reserve-input" type="number" min="0" step="1" value="${s.reserveFloor}"></label><button class="action secondary" data-reserve>Rezervi kaydet</button><label>Çekilecek tutar (₺)<input id="withdraw-input" type="number" min="1" step="1" placeholder="Tutar gir"></label><button class="action" data-withdraw>Kişisel hesaba aktar</button><p class="fine">Rezerv en az 120 saniyelik işletme gideridir. v0.5/v0.6 geçmiş kârı yeniden dağıtılmaz; kâr havuzu v0.7’den itibaren oluşur. Varlıklar şirkete gelir sağlamaz.</p></section><div class="panel"><p>Güncel araç: <b>${car?.name||'Henüz yok'}</b><br>Ana konut: <b>${home?.name||'Henüz yok'}</b><br>Koleksiyon prestiji: ${[...CARS.filter(a=>s.cars.includes(a.id)),...HOMES.filter(a=>s.homes.includes(a.id))].reduce((v,a)=>v+a.prestige,0)}</p></div><div class="mode-options"><button class="action secondary" data-screen="cars">🚘 Otomobiller · ${s.cars.length}/18</button><button class="action secondary" data-screen="homes">🏘 Konutlar · ${s.homes.length}/15</button></div><p class="fine">Fiyatlar oyun içi kurgudur. Kiralık daire bedeli oyunda tek seferlik yerleşme hakkıdır; gerçek mülkiyet veya kiralama işlemi değildir.</p>`;}
+function assetsScreen(kind){const catalog=kind==='cars'?CARS:HOMES,selected=s[kind==='cars'?'currentCar':'primaryHome'];return `<h2>${kind==='cars'?'🚘 Otomobil koleksiyonu':'🏘 Konut portföyü'}</h2><p>Kişisel bakiye: <b>${money(s.personalCash)}</b> · Şirket kasası kullanılmaz.</p><div class="asset-grid">${catalog.map((a,i)=>{const owned=s[kind].includes(a.id),locked=s.officeTier<a.office;return `<article class="panel asset-card ${selected===a.id?'current':''}">${scene(kind==='cars'?'car':'home',i,a.color)}<h3>${a.name}</h3><p>${money(a.cost)} · Prestij +${a.prestige}<br>Ofis ${a.office+1} gerekir</p><button class="action ${owned?'secondary':''}" data-asset="${a.id}" data-kind="${kind}" ${selected===a.id||(!owned&&(locked||s.personalCash<a.cost))?'disabled':''}>${selected===a.id?'✓ Seçili':owned?'Kullan / Ana konut yap':locked?'🔒 Kilitli':'Kişisel hesaptan al'}</button></article>`;}).join('')}</div>`;}
+function quizScreen(){const q=QUESTIONS.find(x=>x.id===s.quiz.current?.id),c=s.quiz.current,stats=quizStats(s);return `<h2>📚 Rastgele HMGS</h2><p>Özgün çalışma soruları · Resmî ÖSYM soruları değildir. ${QUESTIONS.length} soru, ${new Set(QUESTIONS.map(q=>q.subject)).size} alan. Başlangıç seti; tam sınav kapsamı değildir. Kaynak incelemesi: 10.10.2026.</p><div class="panel"><div class="flex"><b>${stats.total} yanıt</b><span>${stats.correct} doğru · ${stats.incorrect} yanlış · %${stats.total?Math.round(stats.correct/stats.total*100):0}</span></div><p class="fine">Cevaplanmayanlar, yanlışlar ve zayıf alanlar önceliklidir. İlk denemede doğru yanıt için ${EXPANSION.quizReward} ₺; günde en çok ${EXPANSION.quizDailyRewards} ödül. Yanlış yanıtta kesinti yok.</p></div>${q?`<section class="panel question"><span class="eyebrow">${q.subject} · ${q.difficulty}</span><h3>${escapeHTML(q.text)}</h3><div class="quiz-options">${q.options.map((o,i)=>`<button class="quiz-option ${quizChoice===i?'picked':''} ${c.answered&&i===q.answer?'correct':''} ${c.answered&&c.choice===i&&i!==q.answer?'wrong':''}" data-choice="${i}" aria-pressed="${quizChoice===i}" ${c.answered?'disabled':''}>${'ABCDE'[i]}) ${escapeHTML(o)}</button>`).join('')}</div>${c.answered?`<div class="answer-feedback" role="status"><b>${c.choice===q.answer?'✓ Doğru yanıt':'Yanlış yanıt · Doğru seçenek '+ 'ABCDE'[q.answer]}</b><p>${escapeHTML(q.explanation)}</p><a href="${q.url}" target="_blank" rel="noopener noreferrer">${escapeHTML(q.reference)}</a></div><button class="action" data-next-question>Sonraki soru</button>`:`<button class="action" data-answer ${quizChoice===null?'disabled':''}>Yanıtı gönder</button>`}</section>`:'<button class="action" data-next-question>Soru çözmeye başla</button>'}<h3>Alanlara göre başarı</h3><div class="panel">${[...new Set(QUESTIONS.map(q=>q.subject))].map(subject=>{const st=stats.subjects[subject];return `<p>${subject}: ${st?st.correct+'/'+st.total+' · %'+Math.round(st.correct/st.total*100):'Henüz yanıt yok'}</p>`;}).join('')}</div><h3>Son çalışmalar</h3><div class="panel">${s.quiz.recent.slice(-5).reverse().map(id=>{const q=QUESTIONS.find(q=>q.id===id);return `<p>${q.subject} · ${s.quiz.records[id]?.lastCorrect?'✓':'Tekrar et'} · ${escapeHTML(q.text)}</p>`;}).join('')||'<p>Henüz çalışma yok.</p>'}</div>`;}
+function expansionScreen(){return `<button class="action secondary back" data-back>← ${['cars','homes'].includes(subscreen)?'Kişisel Hayat':'Geri'}</button>`+({offices:officesScreen,life:lifeScreen,cars:()=>assetsScreen('cars'),homes:()=>assetsScreen('homes'),quiz:quizScreen}[subscreen]?.()||'');}
+function expansionClick(btn){
+ if(btn.dataset.screen){subscreen=btn.dataset.screen;quizChoice=null;if(subscreen==='quiz'&&!s.quiz.current)nextQuestion(s);window.scrollTo(0,0);return true;}
+ if(btn.hasAttribute('data-back')){subscreen=['cars','homes'].includes(subscreen)?'life':'';return true;}
+ let result=null;
+ if(btn.dataset.move!==undefined)result=moveOffice(s,Number(btn.dataset.move));
+ else if(btn.dataset.fixture)result=upgradeFixture(s,btn.dataset.fixture);
+ else if(btn.hasAttribute('data-happy'))result=startHappy(s);
+ else if(btn.hasAttribute('data-reserve')){const value=Number($('reserve-input').value);result=Number.isFinite(value)&&value>=0&&value<=1e15;if(result)s.reserveFloor=Math.ceil(value);}
+ else if(btn.hasAttribute('data-withdraw'))result=withdraw(s,Number($('withdraw-input').value));
+ else if(btn.dataset.asset)result=s[btn.dataset.kind].includes(btn.dataset.asset)?selectAsset(s,btn.dataset.kind,btn.dataset.asset):buyAsset(s,btn.dataset.kind,btn.dataset.asset);
+ else if(btn.dataset.choice!==undefined){quizChoice=Number(btn.dataset.choice);return true;}
+ else if(btn.hasAttribute('data-answer')){const answer=answerQuestion(s,quizChoice);notify(answer?answer.correct?'Doğru! '+(answer.reward?'+'+money(answer.reward):'Çalışma kaydedildi.'):'Yanlış yanıt. Açıklamayı inceleyebilirsin.':'Önce bir seçenek seç.');return true;}
+ else if(btn.hasAttribute('data-next-question')){nextQuestion(s);quizChoice=null;return true;}
+ if(result!==null){notify(result?'İşlem tamamlandı.':'Koşullar sağlanmadı. Bakiye, kapasite ve kilitleri kontrol et.');return true;}return false;
+}
+
+const $=id=>document.getElementById(id), money=n=>'₺'+(Math.abs(n)>=1e9?(n/1e9).toLocaleString('tr-TR',{maximumFractionDigits:1})+' Mr':Math.abs(n)>=1e6?(n/1e6).toLocaleString('tr-TR',{maximumFractionDigits:1})+' Mn':Math.floor(n).toLocaleString('tr-TR')), num=n=>Math.floor(n).toLocaleString('tr-TR');let s,loadMessage='';try{const loaded=loadGame(localStorage);s=loaded.state;loadMessage=loaded.message;}catch{s=fresh();loadMessage='Kayıt alanı kullanılamıyor; ilerlemeni dışa aktar.';}
+const offline=simulateAway(s);let tab='office',last=Date.now(),lastRender=0,lastSave=0;
+const rateMoney=n=>'₺'+n.toLocaleString('tr-TR',{minimumFractionDigits:2,maximumFractionDigits:2});
+const notify=message=>{$('notice').textContent=message;$('notice').classList.add('show');clearTimeout(notify.timer);notify.timer=setTimeout(()=>$('notice').classList.remove('show'),4500);};
+function sync(now=Date.now()){if(!document.hidden){advance(s,Math.max(0,(now-last)/1000),last);last=now;}}
+const save=()=>{const now=Date.now();sync(now);s.savedAt=now;try{persistGame(localStorage,s);$('status').textContent='● Kayıt güncel';}catch{$('status').textContent='● Kayıt kullanılamıyor';$('banner').textContent='Kayıt alanı kullanılamıyor: ilerlemeni Profil’den dışa aktar.';}};
+if(offline.seconds>10){$('overlay').classList.remove('hidden');$('offline').innerHTML=`<p>${Math.floor(offline.seconds/60)} dakika boyunca büron çalıştı.</p><p>Brüt: <b>${money(offline.revenue)}</b></p><p>Gider: <b>${money(offline.expenses)}</b></p><p>Net: <b>${money(offline.net)}</b></p><p>Tamamlanan dosya: <b>${offline.completed}</b></p>`;}
+$('dismiss').onclick=()=>$('overlay').classList.add('hidden');
+function level(){return 1+Math.floor(s.cases/5)}
+function head(){ $('cash').textContent=money(s.cash);$('gross').textContent=rateMoney(incomeRate(s)+contractRate(s))+'/sn';$('expense').textContent=rateMoney(expenseRate(s))+'/sn';$('net').textContent=rateMoney(netRate(s))+'/sn';$('rep').textContent=Math.floor(s.reputation)+'/100';$('sat').textContent=Math.floor(s.satisfaction)+'/100';$('cases').textContent=num(s.cases);$('people').textContent=staffCount(s);$('level').textContent='SV. '+level();}
+function office(){return `${officeExpansionPanel()}${managementPanel()}<h2>🏛 Büro görünümü</h2><div class="panel accent"><div class="flex"><div><h3>${s.office>=8?'Uluslararası Hukuk Firması':s.office>=5?'Tam Hizmet Hukuk Firması':s.office>=3?'Orta Ölçekli Büro':s.office>=1?'Butik Hukuk Bürosu':'Yeni Açılan Hukuk Bürosu'}</h3><p>Ofis seviyesi ${s.office+1} · ${staffCount(s)} hukukçu</p></div><span style="font-size:32px">🏢</span></div><div class="progress"><div style="width:${Math.min(100,s.cases%5*20)}%"></div></div><div class="fine">Yeni prestij seviyesi için ${5-s.cases%5} dosya</div></div><h2>📁 Çalışan dosyalar <span class="muted">(${s.casesActive.length})</span></h2>${s.casesActive.length?s.casesActive.slice(0,6).map(c=>caseCard(c)).join(''):'<div class="panel">Yeni dosyalar otomatik açılıyor...</div>'}<h2>📋 Son gelişmeler</h2><div class="panel">${s.log.slice(0,5).map(v=>`<p>• ${escapeHTML(v)}</p>`).join('')}</div><h2>🎯 Günlük görevler</h2>${dailyMissions()}<h2>🏆 Kariyer hedefleri</h2>${missions()}`}
+function caseCard(c){const d=CONFIG.practices[c.practice],progress=Math.min(100,Math.max(0,(1-c.remaining/c.duration)*100));return `<div class="panel casecard" data-case="${c.id}"><div class="flex"><span class="label">${d.icon} ${d.name}</span><span class="price">${money(c.fee)}</span></div><p class="client">${escapeHTML(c.client||'Müvekkil')} · ${escapeHTML(c.category||'Ticari')} · ${escapeHTML(c.industry||'')}</p><h3 style="margin-top:10px">${escapeHTML(c.title)}</h3><div class="progress" role="progressbar" aria-label="Dosya ilerlemesi" aria-valuenow="${Math.round(progress)}" aria-valuemin="0" aria-valuemax="100"><div style="width:${progress}%"></div></div><div class="flex fine"><span>${d.stages[Math.min(d.stages.length-1,Math.floor(progress/100*d.stages.length))]}</span><span>${Math.ceil(c.remaining)} sn</span></div></div>`}
+function cases(){return `${workloadPanel()}<h2>⚖️ Hukuki dosyalar</h2><div class="panel"><b>Dosyalar kendiliğinden ilerler</b><p>Departmanlarını geliştirerek aynı anda daha fazla müvekkile hizmet ver. Her dosya tamamlandığında vekâlet ücreti tahsil edilir.</p></div>${s.casesActive.map(caseCard).join('')}<h2>Departmanlar</h2><p>Açık alan: ${s.departments.filter(n=>n>0).length} / ${currentOffice(s).departments}. Kapasite doluysa yeni alan için taşınmalısın; mevcut alanlar gelişmeye devam eder.</p>${CONFIG.practices.map((d,i)=>`<div class="panel"><div class="flex"><div><h3>${d.icon} ${d.name}</h3><p>${d.stages.join(' → ')}</p><p>${available(s,i)?'Seviye '+s.departments[i]+' · Otomatik dosya akışı':s.cases+' / '+d.unlock+' dosya · Ofis Sv.'+([1,1,3,5,8][i])+' gerekir'}</p></div><button class="action secondary" data-dept="${i}" ${!available(s,i)||s.cash<deptCost(s,i)||s.departments[i]>=100||(!s.departments[i]&&s.departments.filter(n=>n>0).length>=currentOffice(s).departments)?'disabled':''}>${!available(s,i)?'🔒':s.departments[i]===0?'Aç':'Geliştir'}<br>${money(deptCost(s,i))}</button></div></div>`).join('')}`}
+function team(){return `<div class="panel">Kapasite: ${staffCount(s)} / ${currentOffice(s).capacity} · Çalışan memnuniyeti: ${employeeSatisfaction(s).toFixed(0)}/100</div><h2>👥 Hukuk ekibi</h2><div class="panel accent"><b>Kurucu Avukat</b><p>Başlangıç üretimi +2 ₺/sn. Kurucu her zaman icra departmanını yönetir.</p><p class="fine">Personel deneyimi: ${num(s.experience||0)} terfi</p></div>${CONFIG.roles.map((r,i)=>`<div class="panel rowitem"><div class="emoji">${['🎓','💼','📚','🧠','⚖️','🏛'][i]}</div><div class="body"><h3>${r.name} · ${s.staff[i]} kişi</h3><p>+${r.rate.toLocaleString('tr-TR')} ₺/sn · Maaş ${r.salary.toLocaleString('tr-TR')} ₺/sn</p></div><div class="staffbuttons"><button class="action" data-hire="${i}" ${s.cash<hiringCost(s,i)||staffCount(s)>=currentOffice(s).capacity?'disabled':''}>İşe al<br>${money(hiringCost(s,i))}</button>${i<5?`<button class="action secondary" data-promote="${i}" ${s.staff[i]<1||s.cash<promotionCost(s,i)?'disabled':''}>Terfi<br>${money(promotionCost(s,i))}</button>`:''}</div></div>`).join('')}`}
+function upgrade(){return `${fixturesPanel()}${investmentsPanel()}<button class="action secondary" data-screen="offices">🏢 Ofisi Büyüt / Taşın</button><h2>Departman yatırımları</h2><p>Ofis sınırı: ${currentOffice(s).departments} açık alan. Kapasite doluysa yeni alan için taşın.</p>${CONFIG.practices.map((d,i)=>`<div class="panel rowitem"><div class="emoji">${d.icon}</div><div class="body"><h3>${d.name} · ${s.departments[i]===0?'Kapalı':'Sv. '+s.departments[i]}</h3><p>Artan kapasite ve daha yüksek dosya ücreti</p></div><button class="action secondary" data-dept="${i}" ${!available(s,i)||s.cash<deptCost(s,i)||s.departments[i]>=100||(!s.departments[i]&&s.departments.filter(n=>n>0).length>=currentOffice(s).departments)?'disabled':''}>${!available(s,i)?'🔒':money(deptCost(s,i))}</button></div>`).join('')}`}
+function dailyMissions(){return DAILY.map(m=>{const prog=dailyProgress(s,m.id),done=s.dailyClaimed.includes(m.id);return `<div class="panel"><div class="flex"><div><b>${m.label}</b><p>${Math.min(m.target,Math.floor(prog))} / ${m.target} · ${money(m.reward)}</p></div><button class="action secondary" data-daily="${m.id}" ${done||prog<m.target?'disabled':''}>${done?'Alındı':'Ödülü al'}</button></div><div class="progress"><div style="width:${Math.min(100,prog/m.target*100)}%"></div></div></div>`}).join('')}
+function missions(){return CONFIG.missions.map(m=>{const progress=missionProgress(s,m),done=progress>=m.target,claimed=s.claimed.includes(m.id);return `<div class="panel"><div class="flex"><div><b>${m.title}</b><p>${Math.min(progress,m.target).toLocaleString('tr-TR',{maximumFractionDigits:1})} / ${m.target} · Ödül: ${money(m.bonus)}</p></div><button class="action secondary" data-claim="${m.id}" ${!done||claimed?'disabled':''}>${claimed?'Alındı':done?'Ödülü al':'🔒'}</button></div><div class="progress"><div style="width:${Math.min(100,progress/m.target*100)}%"></div></div></div>`}).join('')}
+function profile(){let history=s.history.slice(-4).reverse();return `${profileExpansionPanel()}${financePanel()}<h2>📊 Yönetim raporu</h2><div class="panel"><div class="flex"><span>Toplam brüt kazanç</span><b>${money(s.totalEarned)}</b></div><hr class="separator"><div class="flex"><span>Yatırım harcamaları</span><b>${money(s.totalSpent)}</b></div><hr class="separator"><div class="flex"><span>Mevcut ay geliri</span><b>${money(s.monthlyRevenue)}</b></div><hr class="separator"><div class="flex"><span>Mevcut ay gideri</span><b>${money(s.monthlyExpenses)}</b></div><hr class="separator"><div class="flex"><span>Lehe sonuçlanan dosyalar</span><b>${s.wins}</b></div></div><h2>🎯 Günlük görevler</h2>${dailyMissions()}<h2>🗓 Aylık raporlar</h2><p>Bir oyun ayı 10 gerçek dakikadır.</p>${history.length?history.map(h=>`<div class="panel"><b>Ay ${h.month}</b><p>Gelir: ${money(h.revenue)} · Gider: ${money(h.expenses)} · Net: ${money(h.revenue-h.expenses)}</p></div>`).join(''):'<div class="panel">İlk rapor 10 oyun dakikasından sonra hazırlanacak.</div>'}${backupPanel()}<h2>⚙️ Ayarlar</h2><div class="panel"><label><input id="motion" type="checkbox" ${s.reducedMotion?'checked':''}> Animasyonları azalt</label><hr class="separator"><label><input id="sound" type="checkbox" ${s.sound?'checked':''}> Ses efektleri</label></div><button class="action secondary" id="reset" style="width:100%">Oyunu sıfırla</button>`}
+const escapeHTML=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function render(){head();patchContent($('content'),(subscreen?expansionScreen():{office,cases,team,upgrade,profile}[tab]()));document.documentElement.dataset.motion=s.reducedMotion?'reduced':'full';document.querySelectorAll('[data-tab]').forEach(b=>{b.classList.toggle('selected',b.dataset.tab===tab);b.setAttribute('aria-current',b.dataset.tab===tab?'page':'false');});}
+document.addEventListener('click',e=>{const btn=e.target.closest('button');if(!btn||btn.disabled)return;sync();const previousRate=netRate(s),previousCases=s.cases;let ok=false;if(expansionClick(btn)){save();render();return;}if(btn.dataset.tab){tab=btn.dataset.tab;subscreen='';ok=true}else if(btn.dataset.hire!==undefined)ok=hire(s,Number(btn.dataset.hire));else if(btn.hasAttribute('data-office'))ok=upgradeOffice(s);else if(btn.dataset.dept!==undefined)ok=upgradeDept(s,Number(btn.dataset.dept));else if(btn.dataset.claim)ok=claim(s,btn.dataset.claim);else if(btn.dataset.daily)ok=claimDaily(s,btn.dataset.daily);else if(btn.dataset.promote!==undefined)ok=promote(s,Number(btn.dataset.promote));else if(btn.dataset.mode)ok=setMode(s,btn.dataset.mode);else if(btn.hasAttribute('data-train'))ok=train(s);else if(btn.dataset.equipment)ok=buyEquipment(s,btn.dataset.equipment);else if(btn.dataset.contract)ok=signContract(s,btn.dataset.contract);else if(btn.hasAttribute('data-boost'))ok=startBoost(s);else if(btn.hasAttribute('data-draft'))ok=writeDraft(s);else if(btn.id==='export'){exportBackup();return;}else if(btn.id==='import'){importBackup();return;}else if(btn.id==='reset'){if(confirm('Kaydedilmiş bütün oyun ilerlemesi silinsin mi?')){s=fresh();ok=true;tab='office'}}if(ok){if(s.sound){try{const ctx=new (window.AudioContext||window.webkitAudioContext)(),osc=ctx.createOscillator(),gain=ctx.createGain();osc.connect(gain);gain.connect(ctx.destination);osc.frequency.value=660;gain.gain.value=.025;osc.start();osc.stop(ctx.currentTime+.08);osc.onended=()=>ctx.close()}catch{}}save();render();if(!btn.dataset.tab){const delta=netRate(s)-previousRate;notify(delta>0?'Yatırım tamamlandı · pasif net +'+rateMoney(delta)+'/sn':btn.hasAttribute('data-draft')?'Dilekçe çalışması +'+money(BALANCE.draftReward):'Büro planı güncellendi.');}}});
+document.addEventListener('change',e=>{if(e.target.id==='motion'){s.reducedMotion=e.target.checked;document.documentElement.dataset.motion=s.reducedMotion?'reduced':'full';save()}if(e.target.id==='sound'){s.sound=e.target.checked;save()}});
+function frame(){const now=Date.now();if(!document.hidden){const before=s.cases;sync(now);resetDaily(s,now);if(s.cases>before)notify((s.cases-before)+' dosya tamamlandı · toplam '+num(s.cases));const editing=['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName);if(now-lastRender>2500&&!editing){const focus=document.activeElement;const key=focus?.id?'#'+focus.id:focus?.dataset?.mode?'[data-mode="'+focus.dataset.mode+'"]':null;render();if(key)document.querySelector(key)?.focus({preventScroll:true});lastRender=now}else{head();updateProgress();}if(now-lastSave>3000){save();lastSave=now}}}
+function updateProgress(){for(const el of document.querySelectorAll('[data-case]')){const c=s.casesActive.find(c=>c.id===Number(el.dataset.case));if(!c)continue;const progress=clamp((1-c.remaining/c.duration)*100,0,100);const bar=el.querySelector('[role="progressbar"]');if(bar){bar.setAttribute('aria-valuenow',Math.round(progress));bar.firstElementChild.style.width=progress+'%';}}}
+setInterval(frame,250);document.addEventListener('visibilitychange',()=>{if(document.hidden){const now=Date.now();advance(s,(now-last)/1000,last);last=now;save();}else{const now=Date.now(),r=simulateAway(s,now);last=now;if(r.seconds>5){$('banner').textContent=`Hoş geldin! ${r.completed} dosya tamamlandı. Net kazanç: ${money(r.net)}.`}render();save();}});addEventListener('pagehide',save);render();save();if(loadMessage)notify(loadMessage);
+
+function managementPanel(){const locked=CONFIG.practices.findIndex((d,i)=>!available(s,i));return `<section class="panel accent"><div class="flex"><div><span class="eyebrow">BÜRO STRATEJİSİ</span><h2>İşler sen yokken de ilerler.</h2><p>Pasif kazanca, dosya ücretleri tamamlandıkça ayrıca eklenir.</p></div><span class="version">v0.7</span></div><div class="mode-options" role="group" aria-label="Çalışma yaklaşımı">${Object.entries(MODES).map(([id,m])=>`<button class="action ${s.mode===id?'':'secondary'}" data-mode="${id}" aria-pressed="${s.mode===id}">${m.label}</button>`).join('')}</div><p>${MODES[s.mode].detail} Mevcut dosyalar etkilenmez.</p><div class="flex quick-actions"><button class="action secondary" data-draft ${s.draftCooldown>0?'disabled':''}>Dilekçe çalışması · +${money(BALANCE.draftReward)}</button><span class="fine">${s.draftCooldown>0?Math.ceil(s.draftCooldown)+' sn sonra hazır':'İsteğe bağlı · 30 sn bekleme'}</span></div>${locked>=0?`<p class="next-goal">Sıradaki alan: ${CONFIG.practices[locked].name} · ${CONFIG.practices[locked].unlock} dosya + ofis Sv. ${[1,1,3,5,8][locked]}</p>`:'<p class="next-goal">Tüm uzmanlık alanları açılabilir durumda.</p>'}</section>`}
+function workloadPanel(){const slots=Math.min(2+Math.floor(staffCount(s)/2),14);return `<section class="panel accent"><span class="eyebrow">İŞ YÜKÜ</span><h2>${s.casesActive.length} / ${slots} dosya yuvası dolu</h2><p>Yeni işler açık departmanlar arasında sırayla dağıtılır. Personel ve departman yatırımları kapasiteyi artırır.</p><div class="chips">${CONFIG.practices.map((d,i)=>`<span class="label">${d.name}: ${s.casesActive.filter(c=>c.practice===i).length}</span>`).join('')}</div></section>`}
+function investmentsPanel(){return `<h2>📚 Eğitim ve çalışma ortamı</h2><div class="panel"><div class="flex"><div><h3>Ekip eğitimi · Sv. ${s.training} / ${BALANCE.trainingMax}</h3><p>Her seviye: pasif üretim +%3, yeni dosyalarda hız ve başarı artışı.</p></div><button class="action" data-train ${s.training>=BALANCE.trainingMax||s.cash<trainingCost(s)?'disabled':''}>${s.training>=BALANCE.trainingMax?'Tamamlandı':money(trainingCost(s))}</button></div></div>${EQUIPMENT.map(e=>`<div class="panel"><div class="flex"><div><h3>${e.name}</h3><p>${e.description}</p></div><button class="action secondary" data-equipment="${e.id}" ${s.equipment.includes(e.id)||s.cash<e.cost?'disabled':''}>${s.equipment.includes(e.id)?'Alındı':money(e.cost)}</button></div></div>`).join('')}<h2>🤝 Ekip planlama oturumu</h2><div class="panel"><p>120 saniye boyunca pasif üretim +%50. Dosya ücretleri ve danışmanlık etkilenmez. 10 dakika bekleme süresi.</p><button class="action" data-boost ${s.boostCooldown>0||s.cash<BALANCE.boostCost?'disabled':''}>${s.boost>0?'Etkin · '+Math.ceil(s.boost)+' sn':s.boostCooldown>0?'Hazır olmasına '+Math.ceil(s.boostCooldown)+' sn':money(BALANCE.boostCost)+' · Başlat'}</button></div><h2>📑 Danışmanlık sözleşmeleri</h2><p>En fazla iki farklı sözleşme. Otomatik yenilenmez; açık ve kapalıyken aynı şekilde ilerler.</p>${CONTRACTS.map(c=>{const active=s.contracts.find(x=>x.id===c.id),locked=s.reputation<c.rep||s.office<c.office;return `<div class="panel"><div class="flex"><div><h3>${c.name}</h3><p>5 dakika · +${rateMoney(c.rate)}/sn · toplam ${money(c.rate*c.duration)}</p><p>İtibar ${c.rep} · Ofis Sv. ${c.office+1} · net getiri ${money(c.rate*c.duration-c.cost)}</p></div><button class="action secondary" data-contract="${c.id}" ${active||locked||s.contracts.length>=2||s.cash<c.cost?'disabled':''}>${active?Math.ceil(active.remaining)+' sn':locked?'🔒':money(c.cost)}</button></div></div>`}).join('')}`}
+function financePanel(){return `<h2>💰 Gelirin kaynağı</h2><section class="panel accent"><div class="flex"><span>Pasif üretim çarpanı</span><b>×${(productivity(s)*Math.max(happyMultiplier(s),s.boost>0?BALANCE.boostMultiplier:1)).toFixed(2)}</b></div><p>Ofis ve itibar etkileri taban üretime dahildir.</p><hr class="separator"><div class="flex"><span>Pasif net + danışmanlık</span><b>${rateMoney(netRate(s))}/sn</b></div><p>Dosya ücretleri bu hıza dahil değildir. Gelecekteki sonuçlara bağlıdır.</p><hr class="separator"><div class="flex"><span>v0.7 dosya tahsilatı</span><b>${money(s.caseRevenue)}</b></div><div class="flex"><span>v0.7 danışmanlık</span><b>${money(s.contractRevenue)}</b></div><div class="flex"><span>v0.7 görev ödülleri</span><b>${money(s.bonusRevenue)}</b></div><p>Yeni kırılımlar v0.7’dan itibaren tutulur; v0.5 toplam kazancı korunur.</p></section>`}
+function backupPanel(){return `<h2>💾 Kayıt taşıma</h2><div class="panel"><p>v0.5 ve v0.6 kayıtları aynı tarayıcı ve adreste otomatik aktarılır. Adres veya cihaz değiştirirken JSON yedeği kullan. İçe aktarım mevcut oturumun yerini alır.</p><button class="action secondary" id="export">Yedeği indir</button><label for="import-data" class="backup-label">Kayıt JSON metni</label><textarea id="import-data" rows="4" placeholder="Kayıt metnini buraya yapıştır" spellcheck="false"></textarea><button class="action secondary" id="import">Kaydı içe aktar</button></div>`}
+function exportBackup(){save();const blob=new Blob([JSON.stringify(s,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='law-firm-tycoon-v7-save.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);notify('JSON yedeği indirildi.');}
+function importBackup(){try{const next=parseSave($('import-data').value);next.savedAt=Date.now();persistGame(localStorage,s);localStorage.setItem(CONFIG.saveKey+'-before-import',JSON.stringify(s));s=next;last=Date.now();save();render();notify('Kayıt aktarıldı. Önceki oturum yedeği saklandı.');}catch(e){notify('İçe aktarım başarısız: '+e.message);}}
+
+// Reconcile nodes instead of replacing the whole view every 2.5 seconds.
+// This keeps keyboard focus, active buttons and the current scroll position stable.
+function patchContent(target,html){
+ const template=document.createElement('template');template.innerHTML=html;
+ function reconcile(parent,incoming){
+  const old=[...parent.childNodes],next=[...incoming.childNodes];
+  for(let i=0;i<Math.max(old.length,next.length);i++){
+   const a=old[i],b=next[i];if(!b){a.remove();continue;}if(!a){parent.appendChild(b.cloneNode(true));continue;}
+   if(a.nodeType!==b.nodeType||(a.nodeType===1&&a.tagName!==b.tagName)){a.replaceWith(b.cloneNode(true));continue;}
+   if(a.nodeType===3){if(a.textContent!==b.textContent)a.textContent=b.textContent;continue;}
+   if(a.nodeType!==1)continue;
+   for(const attribute of [...a.attributes])if(!b.hasAttribute(attribute.name))a.removeAttribute(attribute.name);
+   for(const attribute of [...b.attributes])if(a.getAttribute(attribute.name)!==attribute.value)a.setAttribute(attribute.name,attribute.value);
+   if(a.tagName==='INPUT')a.checked=b.checked;
+   if(a.tagName!=='TEXTAREA')reconcile(a,b);
+  }
+ }
+ reconcile(target,template.content);
+}
+</script></body></html>
+

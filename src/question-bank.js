@@ -1,0 +1,794 @@
+const QUESTIONS=[
+  {
+    "id": "q001",
+    "subject": "Anayasa Hukuku",
+    "difficulty": "Temel",
+    "text": "Yasama yetkisi Türk Milleti adına hangi organa aittir?",
+    "options": [
+      "TBMM",
+      "Cumhurbaşkanı",
+      "Danıştay",
+      "Yargıtay",
+      "Anayasa Mahkemesi"
+    ],
+    "answer": 0,
+    "explanation": "Anayasa m.7 yasama yetkisini TBMM’ye verir ve devredilemeyeceğini belirtir.",
+    "reference": "Anayasa — 7",
+    "url": "https://www.anayasa.gov.tr/tr/mevzuat/anayasa/",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q002",
+    "subject": "Anayasa Hukuku",
+    "difficulty": "Temel",
+    "text": "Anayasaya göre yürütme yetkisi ve görevi kim tarafından kullanılır ve yerine getirilir?",
+    "options": [
+      "Yargıtay Cumhuriyet Başsavcısı",
+      "Cumhurbaşkanı",
+      "TBMM Başkanı",
+      "Anayasa Mahkemesi Başkanı",
+      "Sayıştay"
+    ],
+    "answer": 1,
+    "explanation": "m.8 uyarınca yürütme, Anayasa ve kanunlara uygun olarak Cumhurbaşkanınca yürütülür.",
+    "reference": "Anayasa — 8",
+    "url": "https://www.anayasa.gov.tr/tr/mevzuat/anayasa/",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q003",
+    "subject": "Anayasa Hukuku",
+    "difficulty": "Temel",
+    "text": "Yargı yetkisi Türk Milleti adına nasıl mahkemelerce kullanılır?",
+    "options": [
+      "Yalnız idari",
+      "Yalnız tek hâkimli",
+      "Bağımsız ve tarafsız",
+      "Yürütmeye bağlı",
+      "Yalnız seçimle kurulan"
+    ],
+    "answer": 2,
+    "explanation": "m.9 yargı yetkisinin bağımsız ve tarafsız mahkemelerce kullanılmasını öngörür.",
+    "reference": "Anayasa — 9",
+    "url": "https://www.anayasa.gov.tr/tr/mevzuat/anayasa/",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q004",
+    "subject": "Anayasa Hukuku",
+    "difficulty": "Temel",
+    "text": "Anayasa m.4 hangi maddelerdeki hükümleri değiştirme ve değiştirmeyi teklif etme yasağı kapsamında sayar?",
+    "options": [
+      "5, 6 ve 7",
+      "Bütün maddeler",
+      "Yalnız geçici maddeler",
+      "1, 2 ve 3",
+      "Yalnız 1"
+    ],
+    "answer": 3,
+    "explanation": "Yasak; Cumhuriyet şekli, Cumhuriyetin nitelikleri ve m.3 hükümlerini kapsar.",
+    "reference": "Anayasa — 4",
+    "url": "https://www.anayasa.gov.tr/tr/mevzuat/anayasa/",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q005",
+    "subject": "Medeni Hukuk",
+    "difficulty": "Temel",
+    "text": "Özel hukuk uyuşmazlığında uygulanabilir kanun hükmü yoksa hâkim öncelikle hangi kaynağa başvurur?",
+    "options": [
+      "Kendi siyasi tercihi",
+      "Taraflardan güçlü olanın isteği",
+      "Yabancı kanunların tamamı",
+      "Ceza yaptırımları",
+      "Örf ve âdet hukuku"
+    ],
+    "answer": 4,
+    "explanation": "TMK m.1 kanun hükmünün yokluğunda önce örf ve âdet hukukunu gösterir; o da yoksa hâkim hukuk yaratır.",
+    "reference": "4721 sayılı TMK — 1",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103249",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q006",
+    "subject": "Medeni Hukuk",
+    "difficulty": "Temel",
+    "text": "Bir hakkın açıkça kötüye kullanılması için TMK’nın yaklaşımı nedir?",
+    "options": [
+      "Hukuk düzeni korumaz",
+      "Daima korunur",
+      "Sadece ticarette korunur",
+      "Yalnız yazılıysa korunur",
+      "Otomatik olarak suç sayılır"
+    ],
+    "answer": 0,
+    "explanation": "TMK m.2 dürüstlük kuralını ve hakkın açıkça kötüye kullanılmasının korunmayacağını düzenler. Her kötüye kullanım kendiliğinden suç değildir.",
+    "reference": "4721 sayılı TMK — 2",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103249",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q007",
+    "subject": "Medeni Hukuk",
+    "difficulty": "Temel",
+    "text": "Gerekli özeni göstermeyen kişi, kanunun iyiniyete sonuç bağladığı bir olayda neyle karşılaşır?",
+    "options": [
+      "İspat yükü her durumda kalkar",
+      "İyiniyet iddiasında bulunamaz",
+      "Her durumda iyiniyetli sayılır",
+      "Otomatik ergin olur",
+      "Bütün borçları sona erer"
+    ],
+    "answer": 1,
+    "explanation": "TMK m.3 iyiniyet karinesini kabul eder; ancak beklenen özeni göstermeyen kişinin bu iddiasını dışlar.",
+    "reference": "4721 sayılı TMK — 3",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103249",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q008",
+    "subject": "Medeni Hukuk",
+    "difficulty": "Temel",
+    "text": "Kanunun takdir yetkisi tanıdığı bir konuda hâkim hangi ölçüte göre karar verir?",
+    "options": [
+      "Davacının servetine",
+      "Yalnız idarenin talimatına",
+      "Hukuka ve hakkaniyete",
+      "Yalnız kişisel beğenisine",
+      "Yalnız çoğunluk anketine"
+    ],
+    "answer": 2,
+    "explanation": "TMK m.4 takdirin ölçütünü hukuk ve hakkaniyet olarak belirler; sınırsız kişisel tercih değildir.",
+    "reference": "4721 sayılı TMK — 4",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103249",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q009",
+    "subject": "Borçlar Hukuku",
+    "difficulty": "Orta",
+    "text": "Bir sözleşmenin kurulması için temel irade koşulu hangisidir?",
+    "options": [
+      "Her durumda noter onayı",
+      "Her durumda mahkeme kararı",
+      "Sadece bir tanığın bulunması",
+      "Karşılıklı ve birbirine uygun açıklamalar",
+      "Yalnız tek tarafın iç düşüncesi"
+    ],
+    "answer": 3,
+    "explanation": "TBK m.1 karşılıklı, birbirine uygun irade açıklamalarını arar. Açıklama açık veya örtülü olabilir.",
+    "reference": "6098 sayılı TBK — 1",
+    "url": "https://cdn.tbmm.gov.tr/KKBSPublicFile/D23/Y2/T1/KanunMetni/a657b33d-109c-473d-9266-5aa48d603ab2.html",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q010",
+    "subject": "Borçlar Hukuku",
+    "difficulty": "Temel",
+    "text": "Esaslı noktalarda anlaşan tarafların ikinci derecedeki noktaları hiç görüşmemesi, kural olarak ne sonuç doğurur?",
+    "options": [
+      "Sözleşme daima yoktur",
+      "Ceza sorumluluğu doğar",
+      "Taraflar tacir olur",
+      "Mutlaka yeni ihale gerekir",
+      "Sözleşme kurulmuş sayılır"
+    ],
+    "answer": 4,
+    "explanation": "TBK m.2 esaslı noktalarda uyuşmayı yeterli sayar; ikincil noktalar üzerinde durulmaması tek başına kuruluşu engellemez.",
+    "reference": "6098 sayılı TBK — 2",
+    "url": "https://cdn.tbmm.gov.tr/KKBSPublicFile/D23/Y2/T1/KanunMetni/a657b33d-109c-473d-9266-5aa48d603ab2.html",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q011",
+    "subject": "Borçlar Hukuku",
+    "difficulty": "Temel",
+    "text": "Kanun aksini öngörmüyorsa sözleşmenin geçerliliği için şekil kuralı nedir?",
+    "options": [
+      "Hiçbir şekle bağlı değildir",
+      "Mutlaka noter gerekir",
+      "Mutlaka resmî senet gerekir",
+      "Mutlaka iki tanık gerekir",
+      "Mutlaka el yazısı gerekir"
+    ],
+    "answer": 0,
+    "explanation": "TBK m.12 şekil serbestisini esas alır. Özel şekil öngören hükümler saklıdır.",
+    "reference": "6098 sayılı TBK — 12",
+    "url": "https://cdn.tbmm.gov.tr/KKBSPublicFile/D23/Y2/T1/KanunMetni/a657b33d-109c-473d-9266-5aa48d603ab2.html",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q012",
+    "subject": "Borçlar Hukuku",
+    "difficulty": "Orta",
+    "text": "Karşı taraf aleyhine genel işlem koşullarının sözleşmeye girmesi için hangi birleşim aranır?",
+    "options": [
+      "Hiçbir koşul aranmaz",
+      "Bilgilendirme, içeriği öğrenme imkânı ve kabul",
+      "Yalnız küçük puntoyla basım",
+      "Yalnız düzenleyenin imzası",
+      "Yalnız sözleşme başlığı"
+    ],
+    "answer": 1,
+    "explanation": "TBK m.21 bu koşulların varlığı hakkında açık bilgi verilmesini, içeriğin öğrenilebilmesini ve kabulü arar.",
+    "reference": "6098 sayılı TBK — 21",
+    "url": "https://cdn.tbmm.gov.tr/KKBSPublicFile/D23/Y2/T1/KanunMetni/a657b33d-109c-473d-9266-5aa48d603ab2.html",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q013",
+    "subject": "Ticaret Hukuku",
+    "difficulty": "Temel",
+    "text": "Bir ticari işletmeyi kısmen de olsa kendi adına işleten kişi hangi sıfatı taşır?",
+    "options": [
+      "Yalnız kefil",
+      "Hakem",
+      "Tacir",
+      "Her durumda memur",
+      "Yalnız vekil"
+    ],
+    "answer": 2,
+    "explanation": "TTK m.12 gerçek kişi taciri kendi adına ticari işletme işletme ölçütüyle tanımlar.",
+    "reference": "6102 sayılı TTK — 12",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103039",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q014",
+    "subject": "Ticaret Hukuku",
+    "difficulty": "Temel",
+    "text": "Kanuni yasağa rağmen ticari işletme işleten kişinin tacir sıfatı bakımından durumunu hangisi açıklar?",
+    "options": [
+      "Yalnız müşteriler tacir olur",
+      "İşletme otomatik dernek olur",
+      "Tüm borçlar silinir",
+      "Yine tacir sayılır",
+      "Hiçbir zaman tacir olmaz"
+    ],
+    "answer": 3,
+    "explanation": "TTK m.14 yasağa veya gerekli iznin yokluğuna rağmen işletmeyi işleten kişiyi de tacir sayar; diğer sorumluluklar saklıdır.",
+    "reference": "6102 sayılı TTK — 14",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103039",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q015",
+    "subject": "Ticaret Hukuku",
+    "difficulty": "Temel",
+    "text": "TTK m.18’e göre tacirin iflasa tabi olması hangi borçları kapsar?",
+    "options": [
+      "Yalnız ticari satış borcunu",
+      "Yalnız vergi borcunu",
+      "Yalnız kira borcunu",
+      "Hiçbir borcunu",
+      "Her türlü borcunu"
+    ],
+    "answer": 4,
+    "explanation": "Kanun tacirin her türlü borcu için iflasa tabi olduğunu düzenler.",
+    "reference": "6102 sayılı TTK — 18",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103039",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q016",
+    "subject": "Ticaret Hukuku",
+    "difficulty": "Temel",
+    "text": "TTK m.19’daki temel karineye göre tacirin borçları nasıl kabul edilir?",
+    "options": [
+      "Ticari olması asıldır",
+      "Daima bağış sayılır",
+      "Daima kamu borcudur",
+      "Daima geçersizdir",
+      "Daima zamanaşımına uğramıştır"
+    ],
+    "answer": 0,
+    "explanation": "Ticari borç karinesi esastır; gerçek kişi tacir için maddede öngörülen istisnalar saklıdır.",
+    "reference": "6102 sayılı TTK — 19",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103039",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q017",
+    "subject": "Medeni Usul Hukuku",
+    "difficulty": "Temel",
+    "text": "Aksine düzenleme yoksa malvarlığı ve şahıs varlığı haklarına ilişkin davalarda genel görevli mahkeme hangisidir?",
+    "options": [
+      "İdare mahkemesi",
+      "Asliye hukuk mahkemesi",
+      "Vergi mahkemesi",
+      "İcra ceza mahkemesi",
+      "Sulh ceza hâkimliği"
+    ],
+    "answer": 1,
+    "explanation": "HMK m.2 değere ve miktara bakmaksızın asliye hukuku genel görevli sayar; özel görev kuralları saklıdır.",
+    "reference": "6100 sayılı HMK — 2",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103103",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q018",
+    "subject": "Medeni Usul Hukuku",
+    "difficulty": "Temel",
+    "text": "Taraf talebi olmadan hâkimin kendiliğinden dava inceleyip karara bağlayamaması hangi ilkeyle ilgilidir?",
+    "options": [
+      "Yetki genişliği",
+      "İdarenin bütünlüğü",
+      "Tasarruf ilkesi",
+      "Ceza şahsiliği",
+      "Vergi kanuniliği"
+    ],
+    "answer": 2,
+    "explanation": "HMK m.24 tasarruf ilkesini düzenler; davayı açma ve serbestçe tasarruf edilebilir konuda tasarruf taraflara aittir.",
+    "reference": "6100 sayılı HMK — 24",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103103",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q019",
+    "subject": "Medeni Usul Hukuku",
+    "difficulty": "Orta",
+    "text": "Kanuni istisna dışında hâkimin tarafların ileri sürmediği vakıaları kendiliğinden dikkate alamaması hangi ilkedir?",
+    "options": [
+      "Vergide genellik",
+      "Suçta kanunilik",
+      "İdari vesayet",
+      "Taraflarca getirilme",
+      "Resen araştırmanın sınırsızlığı"
+    ],
+    "answer": 3,
+    "explanation": "HMK m.25, kanuni istisnalar dışında vakıa ve delillerin taraflarca getirilmesini esas alır.",
+    "reference": "6100 sayılı HMK — 25",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103103",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q020",
+    "subject": "Medeni Usul Hukuku",
+    "difficulty": "Orta",
+    "text": "Kanuni istisna bulunmayan bir davada talep edilen miktardan daha fazlasına karar verilebilir mi?",
+    "options": [
+      "Evet; her zaman",
+      "Yalnız davacı zenginse",
+      "Yalnız davalı gelmezse",
+      "Yalnız dosya kalınsa",
+      "Hayır; talep sonucu ile bağlılık vardır"
+    ],
+    "answer": 4,
+    "explanation": "HMK m.26 hâkimi talep sonucuyla bağlar. Gerektiğinde daha azına karar verilebilir, fazlasına veya başka şeye verilemez.",
+    "reference": "6100 sayılı HMK — 26",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103103",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q021",
+    "subject": "İcra ve İflas Hukuku",
+    "difficulty": "Temel",
+    "text": "Genel haciz yoluyla ilamsız takipte olağan borca itiraz süresi, ödeme emrinin tebliğinden itibaren kaç gündür?",
+    "options": [
+      "7",
+      "3",
+      "5",
+      "10",
+      "30"
+    ],
+    "answer": 0,
+    "explanation": "İİK m.62 genel haciz yolunda yedi günlük süreyi öngörür. Diğer takip yollarının süreleri farklı olabilir.",
+    "reference": "İİK 62 ve 66 hakkında yargı kararı — İİK 62",
+    "url": "https://mevzuat.adalet.gov.tr/ictihat/1218215200",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q022",
+    "subject": "İcra ve İflas Hukuku",
+    "difficulty": "Temel",
+    "text": "Genel haciz yoluyla ilamsız takipte süresinde borca itirazın temel etkisi nedir?",
+    "options": [
+      "Takip aynı şekilde kesinleşir",
+      "Takip kendiliğinden durur",
+      "Borç kesin olarak ortadan kalkar",
+      "Alacaklı otomatik hapse girer",
+      "Borçlu otomatik iflas eder"
+    ],
+    "answer": 1,
+    "explanation": "İİK m.66 uyarınca süresinde itiraz takibi durdurur; alacağın maddi hukuk bakımından yokluğunu kesinleştirmez.",
+    "reference": "İİK 62 ve 66 hakkında yargı kararı — İİK 66",
+    "url": "https://mevzuat.adalet.gov.tr/ictihat/1218215200",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q023",
+    "subject": "Ceza Hukuku",
+    "difficulty": "Temel",
+    "text": "Suçun kanuni tanımındaki unsurların bilerek ve istenerek gerçekleştirilmesi hangi kavramdır?",
+    "options": [
+      "Af",
+      "Şikâyetten vazgeçme",
+      "Kast",
+      "Basit taksir",
+      "Zamanaşımı"
+    ],
+    "answer": 2,
+    "explanation": "TCK m.21 kastı bilme ve isteme unsurlarıyla tanımlar.",
+    "reference": "5237 sayılı TCK — 21",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103228",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q024",
+    "subject": "Ceza Hukuku",
+    "difficulty": "Temel",
+    "text": "Taksirle işlenen fiiller hangi durumda cezalandırılır?",
+    "options": [
+      "Yalnız mağdur isterse",
+      "Yalnız basına yansırsa",
+      "Hiçbir zaman",
+      "Kanun açıkça belirttiğinde",
+      "Her zaman"
+    ],
+    "answer": 3,
+    "explanation": "TCK m.22/1 taksir sorumluluğu için kanunda açık düzenleme arar.",
+    "reference": "5237 sayılı TCK — 22/1",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103228",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q025",
+    "subject": "Ceza Hukuku",
+    "difficulty": "Orta",
+    "text": "Failin öngördüğü neticeyi istememesine karşın neticenin meydana gelmesi hangi kavramın tanımıdır?",
+    "options": [
+      "Doğrudan kast",
+      "İştirak",
+      "İçtima",
+      "Müsadere",
+      "Bilinçli taksir"
+    ],
+    "answer": 4,
+    "explanation": "TCK m.22/3 bilinçli taksiri bu şekilde tanımlar. Neticeyi öngörmek ile istemek aynı değildir.",
+    "reference": "5237 sayılı TCK — 22/3",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103228",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q026",
+    "subject": "Ceza Hukuku",
+    "difficulty": "Orta",
+    "text": "Haksız saldırıyı o anda koşullara göre orantılı biçimde defetme zorunluluğuyla işlenen fiil hangi kurumla ilgilidir?",
+    "options": [
+      "Meşru savunma",
+      "Genel af",
+      "Uzlaşma",
+      "Zamanaşımı",
+      "Şikâyetten vazgeçme"
+    ],
+    "answer": 0,
+    "explanation": "TCK m.25/1, gerçekleşen veya gerçekleşmesi ya da tekrarı muhakkak saldırıya karşı orantılı savunmayı düzenler.",
+    "reference": "5237 sayılı TCK — 25/1",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103228",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q027",
+    "subject": "Ceza Muhakemesi Hukuku",
+    "difficulty": "Temel",
+    "text": "Kamu davası hangi işlemle açılmış olur ve kovuşturma evresi başlar?",
+    "options": [
+      "Şüphelinin adres değiştirmesi",
+      "İddianamenin kabulü",
+      "İhbarın yapılması",
+      "İlk tanığın bulunması",
+      "Kolluğun tutanak yazması"
+    ],
+    "answer": 1,
+    "explanation": "CMK m.175 kamu davasının açılışını iddianamenin kabulüne bağlar.",
+    "reference": "5271 sayılı CMK — 175",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/102946?query=Madde+74",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q028",
+    "subject": "Ceza Muhakemesi Hukuku",
+    "difficulty": "Temel",
+    "text": "İfade veya sorguda şüpheliye hangi hak bildirilir?",
+    "options": [
+      "Delilleri yok etme",
+      "Tanığa emir verme",
+      "Müdafi seçme ve yardımından yararlanma",
+      "Hâkimi görevden alma",
+      "Kanunu değiştirme"
+    ],
+    "answer": 2,
+    "explanation": "CMK m.147/1-c müdafi seçme ve hukuki yardım hakkının bildirilmesini düzenler.",
+    "reference": "5271 sayılı CMK — 147/1-c",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/102946?query=Madde+74",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q029",
+    "subject": "İdare Hukuku",
+    "difficulty": "Temel",
+    "text": "İdarenin kuruluş ve görevleriyle bir bütün olması Anayasa’da hangi çerçeveye bağlanmıştır?",
+    "options": [
+      "Yalnız gelenekle belirlenme",
+      "Yalnız şirket kararıyla düzenlenme",
+      "Her birimin sınırsız bağımsızlığı",
+      "Kanunla düzenlenme",
+      "Yalnız özel sözleşmeyle kurulma"
+    ],
+    "answer": 3,
+    "explanation": "Anayasa m.123 idarenin bütünlüğünü ve kanunla düzenlenmesini esas alır.",
+    "reference": "Anayasa — 123",
+    "url": "https://www.anayasa.gov.tr/tr/mevzuat/anayasa/",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q030",
+    "subject": "İdare Hukuku",
+    "difficulty": "Temel",
+    "text": "Yönetmeliklerin kanunlar ve Cumhurbaşkanlığı kararnameleriyle ilişkisi nasıl olmalıdır?",
+    "options": [
+      "Her zaman bunları kaldırmalıdır",
+      "Anayasa yerine geçmelidir",
+      "Kanunları otomatik değiştirmelidir",
+      "Hiçbir ilişkisi yoktur",
+      "Bunlara aykırı olmamalıdır"
+    ],
+    "answer": 4,
+    "explanation": "m.124, görev alanıyla ilgili üst düzenlemelerin uygulanmasını sağlamak ve onlara aykırı olmamak koşulunu arar.",
+    "reference": "Anayasa — 124",
+    "url": "https://www.anayasa.gov.tr/tr/mevzuat/anayasa/",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q031",
+    "subject": "İdare Hukuku",
+    "difficulty": "Temel",
+    "text": "Anayasa m.124’te yönetmelik çıkarabilecekler arasında hangisi açıkça yer alır?",
+    "options": [
+      "Bakanlıklar",
+      "Her gerçek kişi",
+      "Her aile",
+      "Her apartman sakini",
+      "Her özel müşteri"
+    ],
+    "answer": 0,
+    "explanation": "Cumhurbaşkanı, bakanlıklar ve kamu tüzelkişileri m.124’te sayılır. Yetki kendi görev alanıyla sınırlıdır.",
+    "reference": "Anayasa — 124",
+    "url": "https://www.anayasa.gov.tr/tr/mevzuat/anayasa/",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q032",
+    "subject": "İdare Hukuku",
+    "difficulty": "Temel",
+    "text": "İdarenin eylem ve işlemleri için Anayasa m.125’in ilk cümlesindeki temel kural nedir?",
+    "options": [
+      "Yalnız özel hakem karar verir",
+      "Yargı yolu açıktır",
+      "Yargı denetimi yasaktır",
+      "Yalnız sözlü itiraz mümkündür",
+      "Yalnız seçimle değişebilir"
+    ],
+    "answer": 1,
+    "explanation": "m.125’in temel kuralı yargı yolunun açık olmasıdır; anayasal istisna ve özel düzenlemeler ayrıca değerlendirilir.",
+    "reference": "Anayasa — 125",
+    "url": "https://www.anayasa.gov.tr/tr/mevzuat/anayasa/",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q033",
+    "subject": "İdari Yargılama Usulü",
+    "difficulty": "Temel",
+    "text": "İdari işlemin yetki, şekil, sebep, konu veya maksat yönünden hukuka aykırılığı iddiasıyla hangi dava açılır?",
+    "options": [
+      "Mirasın reddi",
+      "Ceza davası",
+      "İptal davası",
+      "Boşanma davası",
+      "İflas davası"
+    ],
+    "answer": 2,
+    "explanation": "İYUK m.2/1-a menfaatleri ihlal edilenlerin açtığı iptal davasını tanımlar.",
+    "reference": "2577 sayılı İYUK — 2/1-a",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103161",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q034",
+    "subject": "İdari Yargılama Usulü",
+    "difficulty": "Temel",
+    "text": "İdari eylem veya işlem nedeniyle kişisel hakkı doğrudan zarar görenin zararının giderilmesine yönelik dava hangisidir?",
+    "options": [
+      "Soybağı davası",
+      "İzale-i şuyu",
+      "Ceza davası",
+      "Tam yargı davası",
+      "Vesayet davası"
+    ],
+    "answer": 3,
+    "explanation": "İYUK m.2/1-b tam yargı davalarını idari eylem ve işlemlerden doğan kişisel hak ihlalleri üzerinden tanımlar.",
+    "reference": "2577 sayılı İYUK — 2/1-b",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103161",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q035",
+    "subject": "İdari Yargılama Usulü",
+    "difficulty": "Temel",
+    "text": "İdari yargı merciinin hukuka uygunluk denetimi dışında yapamayacağı denetim hangisidir?",
+    "options": [
+      "Yetki denetimi",
+      "Şekil denetimi",
+      "Sebep denetimi",
+      "Maksat denetimi",
+      "Yerindelik denetimi"
+    ],
+    "answer": 4,
+    "explanation": "İYUK m.2/2 yerindelik denetimini yasaklar. Mahkeme idarenin yerine geçerek takdir kullanamaz.",
+    "reference": "2577 sayılı İYUK — 2/2",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103161",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q036",
+    "subject": "İdari Yargılama Usulü",
+    "difficulty": "Temel",
+    "text": "İYUK m.1/2’ye göre idari yargıda temel yargılama usulü hangisidir?",
+    "options": [
+      "Yazılı yargılama ve evrak üzerinde inceleme",
+      "Her işte jüri yargılaması",
+      "Yalnız telefonla görüşme",
+      "Yalnız arabuluculuk",
+      "Yalnız noter incelemesi"
+    ],
+    "answer": 0,
+    "explanation": "Temel usul yazılıdır; kanundaki duruşmaya ilişkin hükümler bu temel kuralı ortadan kaldırmaz.",
+    "reference": "2577 sayılı İYUK — 1/2",
+    "url": "https://mevzuat.adalet.gov.tr/mevzuat/103161",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q037",
+    "subject": "İş Hukuku",
+    "difficulty": "Temel",
+    "text": "İş sözleşmesinin işçi yönünden ayırt edici unsuru hangisidir?",
+    "options": [
+      "Mutlaka kamu görevlisi olma",
+      "Bağımlı olarak iş görme",
+      "Mutlaka şirket ortağı olma",
+      "Her zaman ücretsiz çalışma",
+      "Yalnız kendi hesabına satış"
+    ],
+    "answer": 1,
+    "explanation": "4857 m.8, bağımlı iş görme ve bunun karşılığında ücret ödeme borçları üzerinden tanım yapar.",
+    "reference": "4857 sayılı İş Kanunu — 8",
+    "url": "https://www.csgb.gov.tr/Media/crldhi51/4857-say%C4%B1l%C4%B1-i%C5%9F-kanunu.pdf",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q038",
+    "subject": "İş Hukuku",
+    "difficulty": "Temel",
+    "text": "Toplu iş sözleşmesiyle uzatma bulunmadığında deneme süresi en çok ne kadardır?",
+    "options": [
+      "1 yıl",
+      "Sınırsız",
+      "2 ay",
+      "1 hafta",
+      "6 ay"
+    ],
+    "answer": 2,
+    "explanation": "m.15 genel üst sınırı iki ay belirler; toplu iş sözleşmesiyle dört aya kadar uzatma mümkündür.",
+    "reference": "4857 sayılı İş Kanunu — 15",
+    "url": "https://www.csgb.gov.tr/Media/crldhi51/4857-say%C4%B1l%C4%B1-i%C5%9F-kanunu.pdf",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q039",
+    "subject": "İş Hukuku",
+    "difficulty": "Temel",
+    "text": "4857 kapsamında yıllık ücretli izin hakkından önceden vazgeçilmesine ilişkin kural nedir?",
+    "options": [
+      "Yalnız işveren isterse vazgeçilir",
+      "Ücret iki kat ise otomatik kalkar",
+      "Sadece stajyerler vazgeçemez",
+      "Bu haktan vazgeçilemez",
+      "Her zaman sözlü vazgeçilir"
+    ],
+    "answer": 3,
+    "explanation": "m.53 yıllık ücretli izin hakkından vazgeçilemeyeceğini açıkça belirtir.",
+    "reference": "4857 sayılı İş Kanunu — 53",
+    "url": "https://www.csgb.gov.tr/Media/crldhi51/4857-say%C4%B1l%C4%B1-i%C5%9F-kanunu.pdf",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q040",
+    "subject": "İş Hukuku",
+    "difficulty": "Temel",
+    "text": "Özel çalışma süresi düzenlemeleri dışında genel haftalık üst sınır kaç saattir?",
+    "options": [
+      "30",
+      "35",
+      "50",
+      "60",
+      "45"
+    ],
+    "answer": 4,
+    "explanation": "m.63 genel bakımdan haftalık çalışma süresini en çok 45 saat belirler. Özel düzenlemeler saklıdır.",
+    "reference": "4857 sayılı İş Kanunu — 63",
+    "url": "https://www.csgb.gov.tr/Media/crldhi51/4857-say%C4%B1l%C4%B1-i%C5%9F-kanunu.pdf",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q041",
+    "subject": "Vergi Hukuku",
+    "difficulty": "Temel",
+    "text": "Vergi alacağının kanuni matrah ve oranlara göre miktar olarak hesaplanıp belirlenmesi hangi işlemdir?",
+    "options": [
+      "Tarh",
+      "Tahsil",
+      "Terkin",
+      "Af",
+      "Zamanaşımı"
+    ],
+    "answer": 0,
+    "explanation": "VUK m.20’deki tarh, vergi alacağının miktar olarak belirlenmesidir; ödemenin gerçekleşmesi değildir.",
+    "reference": "GİB tarhiyat rehberi — VUK 20 ve 22 — VUK 20",
+    "url": "https://cdn.gib.gov.tr/api/gibportal-file/file/getFileResources?objectKey=arsiv%2Fonceki-dokumanlar%2F2011_tarhiyatlarda_idari.pdf",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q042",
+    "subject": "Vergi Hukuku",
+    "difficulty": "Temel",
+    "text": "Tarh ve tebliğ edilen verginin ödenmesi gereken aşamaya gelmesi ne olarak adlandırılır?",
+    "options": [
+      "İbra",
+      "Tahakkuk",
+      "Tescil",
+      "Haciz",
+      "Müsadere"
+    ],
+    "answer": 1,
+    "explanation": "VUK m.22’de tahakkuk, verginin ödenecek aşamaya gelmesidir; fiilî tahsil ile aynı kavram değildir.",
+    "reference": "GİB tarhiyat rehberi — VUK 20 ve 22 — VUK 22",
+    "url": "https://cdn.gib.gov.tr/api/gibportal-file/file/getFileResources?objectKey=arsiv%2Fonceki-dokumanlar%2F2011_tarhiyatlarda_idari.pdf",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q043",
+    "subject": "Hukuk Tarihi",
+    "difficulty": "Temel",
+    "text": "Türk anayasa tarihinde ilk anayasa olarak kabul edilen metin hangisidir?",
+    "options": [
+      "1982 Anayasası",
+      "1839 Tanzimat Fermanı",
+      "1876 Kanun-ı Esasi",
+      "1924 Anayasası",
+      "1961 Anayasası"
+    ],
+    "answer": 2,
+    "explanation": "TBMM anayasa tarihi sayfası 23 Aralık 1876’da kabul edilen Kanun-ı Esasi’yi ilk anayasa olarak belirtir. Tanzimat Fermanı anayasal gelişimde önemli olmakla birlikte bu metin değildir.",
+    "reference": "TBMM anayasa tarihi — 1876",
+    "url": "https://www.tbmm.gov.tr/anayasa/yetmis-alti-kanuni-esasi",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "q044",
+    "subject": "Hukuk Tarihi",
+    "difficulty": "Temel",
+    "text": "TBMM tarihçe sayfasına göre Kanun-ı Esasi taslağını hazırlayan komisyon hangi iki anayasadan esinlenmiştir?",
+    "options": [
+      "1924 Türkiye ve 1961 Türkiye",
+      "1787 ABD ve 1982 Türkiye",
+      "1919 Almanya ve 1947 İtalya",
+      "1875 Fransa ve 1831 Belçika",
+      "1982 Türkiye ve 1949 Almanya"
+    ],
+    "answer": 3,
+    "explanation": "TBMM tarihçesi komisyonun 1875 Fransa ve 1831 Belçika anayasalarından esinlendiğini belirtir.",
+    "reference": "TBMM anayasa tarihi — 1876 hazırlığı",
+    "url": "https://www.tbmm.gov.tr/anayasa/yetmis-alti-kanuni-esasi",
+    "reviewedAt": "2026-10-10"
+  }
+];

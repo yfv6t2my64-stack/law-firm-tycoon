@@ -1,0 +1,19 @@
+[
+  "config.js",
+  "balance.js",
+  "expansion-data.js",
+  "utils.js",
+  "state.js",
+  "economy.js",
+  "staff.js",
+  "upgrades.js",
+  "missions.js",
+  "cases.js",
+  "features.js",
+  "simulation.js",
+  "save.js",
+  "question-bank.js",
+  "expansion.js",
+  "expansion-ui.js",
+  "app.js"
+]

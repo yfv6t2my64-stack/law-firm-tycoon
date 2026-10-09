@@ -1,0 +1,2 @@
+function upgradeOffice(s){return moveOffice(s,s.officeTier+1)}
+function upgradeDept(s,i){if(!Number.isInteger(i)||i<0||i>=5||!available(s,i)||s.departments[i]>=100||(!s.departments[i]&&s.departments.filter(n=>n>0).length>=currentOffice(s).departments))return false;const cost=deptCost(s,i);if(!Number.isFinite(cost)||!spend(s,cost))return false;s.departments[i]++;s.dailyCounts.upgrade++;log(s,CONFIG.practices[i].name+' departmanı geliştirildi');return true}

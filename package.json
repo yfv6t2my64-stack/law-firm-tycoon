@@ -1,0 +1,14 @@
+{
+  "name": "law-firm-tycoon",
+  "version": "0.7.0",
+  "private": true,
+  "description": "T\u00fcrk\u00e7e, yerel ve \u00e7evrimd\u0131\u015f\u0131 hukuk b\u00fcrosu idle oyunu",
+  "scripts": {
+    "build": "node build.cjs",
+    "test": "node --test tests/engine.test.cjs tests/expansion.test.cjs",
+    "economy": "node tests/economy-v7.cjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

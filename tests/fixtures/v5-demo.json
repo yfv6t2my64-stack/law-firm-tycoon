@@ -1,0 +1,81 @@
+{
+  "version": 5,
+  "seed": 3499075395,
+  "experience": 0,
+  "expensesLifetime": 209.9999999999978,
+  "dailyKey": "2026-10-09",
+  "dailyCounts": {
+    "cases": 44,
+    "revenue": 10109.77700000008,
+    "hire": 0,
+    "upgrade": 0
+  },
+  "dailyClaimed": [],
+  "cash": 1010399.777,
+  "totalEarned": 1010609.777,
+  "totalSpent": 0,
+  "cases": 44,
+  "wins": 35,
+  "settled": 7,
+  "reputation": 60,
+  "satisfaction": 77.2599999999998,
+  "staff": [
+    3,
+    2,
+    1,
+    0,
+    0,
+    0
+  ],
+  "office": 4,
+  "departments": [
+    2,
+    1,
+    1,
+    1,
+    0
+  ],
+  "casesActive": [
+    {
+      "id": 45,
+      "practice": 0,
+      "remaining": 7.227298708003946,
+      "duration": 14.227298708003946,
+      "fee": 274,
+      "title": "İstihkak iddiası",
+      "client": "Delta Ticaret",
+      "industry": "Perakende",
+      "category": "Bireysel"
+    }
+  ],
+  "nextCaseId": 46,
+  "claimed": [],
+  "log": [
+    "✓ Kambiyo senedine dayalı takip · 267 ₺",
+    "✓ Ödenmeyen ticari fatura · 261 ₺",
+    "✓ Haciz işlemleri · 254 ₺",
+    "✓ İflas masasına kayıt · 248 ₺",
+    "✓ İstihkak iddiası · 242 ₺",
+    "✓ İtirazın iptali · 235 ₺",
+    "✓ Ödenmeyen ticari fatura · 229 ₺",
+    "✓ İlamsız takip · 222 ₺",
+    "✓ İstihkak iddiası · 216 ₺",
+    "✓ Haciz işlemleri · 209 ₺",
+    "✓ İstihkak iddiası · 203 ₺",
+    "✓ İtirazın iptali · 196 ₺"
+  ],
+  "savedAt": 1791585961019,
+  "simTime": 0,
+  "month": 2,
+  "monthlyRevenue": 0,
+  "monthlyExpenses": 0,
+  "history": [
+    {
+      "month": 1,
+      "revenue": 10110,
+      "expenses": 210
+    }
+  ],
+  "sound": false,
+  "reducedMotion": false
+}

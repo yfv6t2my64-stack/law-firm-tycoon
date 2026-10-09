@@ -1,0 +1,3 @@
+function promote(s,i){if(!Number.isInteger(i)||i<0||i>=5||s.staff[i]<1||s.staff[i+1]>=1000)return false;const cost=Math.floor(hiringCost(s,i+1)*.62);if(!spend(s,cost))return false;s.staff[i]--;s.staff[i+1]++;s.experience=(s.experience||0)+1;log(s,CONFIG.roles[i].name+' terfi etti: '+CONFIG.roles[i+1].name);return true}
+function promotionCost(s,i){return Math.floor(hiringCost(s,i+1)*.62)}
+function hire(s,i){if(!Number.isInteger(i)||i<0||i>=6||s.staff[i]>=1000||staffCount(s)>=currentOffice(s).capacity)return false;const cost=hiringCost(s,i);if(!Number.isFinite(cost)||!spend(s,cost))return false;s.staff[i]++;s.dailyCounts.hire++;log(s,CONFIG.roles[i].name+' ekibe katıldı');return true}
