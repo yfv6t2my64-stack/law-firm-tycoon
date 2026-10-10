@@ -8,3 +8,22 @@ body{background:radial-gradient(circle at 85% 0%,#263b58 0%,#091321 47%);-webkit
 /* Istanbul expansion */
 .asset-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.asset-grid>.panel{margin:0}.asset-art{display:block;width:100%;height:120px;background:linear-gradient(160deg,#223d53,#102235);border-radius:12px;margin-bottom:14px}.asset-card{display:flex;flex-direction:column;gap:6px}.asset-card>.action{margin-top:auto;width:100%}.asset-card.current{border-color:#b9a276}.expansion-hero{display:grid;grid-template-columns:1.5fr 1fr;gap:12px;background:linear-gradient(135deg,#254b53,#152d42)}.expansion-hero .asset-art{align-self:center;margin:0}.back{margin:12px 0}.happy-active{border-color:#69d6b0;animation:celebrate 2s ease-in-out 3}.quiz-options{display:grid;gap:10px;margin:22px 0}.quiz-option{min-height:48px;border:1px solid #52677d;border-radius:10px;padding:14px;text-align:left;background:#142b40;color:#edf4ff;font:inherit;font-size:14px;cursor:pointer}.quiz-option.picked{border-color:#e4c783;background:#394332}.quiz-option.correct{border-color:#79dcba;background:#154d42}.quiz-option.wrong{border-color:#e4a1a1;background:#542e3b}.quiz-option:disabled{cursor:default;opacity:1}.answer-feedback{padding:14px;border-left:3px solid #c5ac75;margin:16px 0;background:#102133}.answer-feedback a{color:#9de2db;font-size:13px}.question h3{font-size:17px;line-height:1.5;margin-top:14px}label:has(input[type=number]){display:block;margin:14px 0;color:#c9d6e4;font-size:13px}input[type=number]{display:block;margin:8px 0;width:100%;padding:12px;color:#fff;background:#091e31;border:1px solid #668098;border-radius:9px;font:inherit}.panel{overflow-wrap:anywhere}.action{white-space:normal}.asset-grid .action{font-size:12px}@keyframes celebrate{50%{box-shadow:0 0 22px #5ad1a735}}@media(max-width:600px){.asset-grid{grid-template-columns:1fr}.expansion-hero{grid-template-columns:1fr}.expansion-hero .asset-art{height:110px}.mode-options{flex-wrap:wrap}.panel .flex{flex-wrap:wrap}.quiz-option{font-size:13px}.asset-art{height:135px}}
 header h1 span{display:inline-block;white-space:nowrap;line-height:1.2;margin-left:3px}.three>div{min-width:0}.three strong{display:block;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}@media(max-width:380px){.three strong{font-size:10px}}
+
+/* v0.8 simplified navigation and home */
+#app{max-width:680px;padding-bottom:110px}
+.navigation{position:sticky;bottom:0;z-index:20;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;padding:8px;background:#101c30ee;backdrop-filter:blur(14px);border:1px solid #344965;border-radius:17px;margin:16px 0}
+.navigation button{min-height:48px;min-width:0;padding:9px 3px;font-size:12px}
+.secondary-metrics{display:none}
+.hero .three{grid-template-columns:1fr;margin-top:4px}.hero .financial-detail{display:none}.hero .net-highlight{background:#0e3a36;border:1px solid #276558;border-radius:12px;padding:11px 12px}
+.hero .net-highlight small{font-size:10px;color:#abd6c8;letter-spacing:.7px}.hero .net-highlight strong{font-size:22px;color:#88f0bd;display:block;margin-top:3px;overflow-wrap:anywhere}
+.hero .cash{margin:9px 0 14px;font-size:clamp(29px,8vw,44px)}
+.overview-simple .overview-stats{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:13px}
+.overview-stats>div{background:#203750;border-radius:12px;padding:14px 12px}.overview-stats small{display:block;font-size:10px;color:#a8bdd0}.overview-stats strong{display:block;font-size:23px;margin-top:7px}
+.overview-simple button{width:100%;min-height:44px}
+.next-goal-card,.recommended-upgrade{border-color:#435878}.next-goal-card .action,.recommended-upgrade .action{min-height:44px;margin-top:9px}
+details.panel{padding:14px}details.panel>summary{cursor:pointer;font-weight:700;min-height:31px;list-style:none}details.panel>summary::-webkit-details-marker{display:none}details.panel>summary:after{content:'⌄';float:right;color:#c9ad79}
+details.panel[open]>summary{padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid #334760}
+.shop-category .panel{margin-top:10px}.shop-intro{margin-bottom:14px}
+#content .expansion-hero{margin-top:10px}
+@media(max-width:400px){.navigation button{font-size:11px}.topline{font-size:9px}header p{max-width:240px}}
+@supports(padding-bottom:env(safe-area-inset-bottom)){#app{padding-bottom:calc(105px + env(safe-area-inset-bottom))}}
