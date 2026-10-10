@@ -1,0 +1,27 @@
+name: Publish built game
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run game tests
+        run: npm test
+      - name: Build browser game
+        run: npm run build
+      - name: Update GitHub Pages files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html dist/index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish generated browser build"
+            git push
+          fi
