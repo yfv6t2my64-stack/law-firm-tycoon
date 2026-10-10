@@ -27,3 +27,24 @@ details.panel[open]>summary{padding-bottom:12px;margin-bottom:12px;border-bottom
 #content .expansion-hero{margin-top:10px}
 @media(max-width:400px){.navigation button{font-size:11px}.topline{font-size:9px}header p{max-width:240px}}
 @supports(padding-bottom:env(safe-area-inset-bottom)){#app{padding-bottom:calc(105px + env(safe-area-inset-bottom))}}
+
+/* v0.9 Living Office */
+.living-office{position:relative;overflow:hidden;margin:14px 0;border:1px solid #4e7790;border-radius:22px;background:linear-gradient(155deg,#16283d,#253e52);box-shadow:0 15px 30px #0003}
+.living-office[hidden]{display:none!important}
+.living-heading,.living-caption{display:flex;justify-content:space-between;gap:8px;align-items:center;padding:12px 14px;color:#eaf4f9;font-size:11px;font-weight:800;letter-spacing:.5px}
+.office-live{color:#8decba;font-size:10px}.living-svg{display:block;width:100%;height:auto;max-height:370px;filter:drop-shadow(0 7px 16px #0003)}
+.living-caption{padding-top:0;font-weight:500;color:#b9cfdd;letter-spacing:0}
+.living-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:0 12px 13px}.living-actions button{font-size:12px;padding:9px 3px;min-width:0}
+.living-office .office-worker{transform-origin:0 -18px;animation:livingType 1.4s ease-in-out infinite;animation-delay:var(--delay)}
+.living-office .office-person{transition:opacity .3s}.living-office .office-desk{filter:drop-shadow(0 3px 1px #1b2d39)}
+.living-office.living-happy{box-shadow:0 0 20px #f2c86a65;border-color:#e8b85a}
+.living-office.living-happy .office-happy-overlay{opacity:1;animation:livingGlow 2.4s ease-in-out infinite}
+.living-office.living-happy .office-worker{animation-duration:.68s}
+.living-popups{position:absolute;left:10%;right:10%;top:25%;pointer-events:none;text-align:center}
+.living-popup{display:inline-block;padding:9px 14px;color:#0a2832;background:#b8f4d5;border-radius:30px;font-weight:800;font-size:13px;box-shadow:0 9px 26px #081d3480;animation:livingRise 1.85s ease-out forwards}
+.living-office.living-static *,html[data-motion=reduced] .living-office *{animation:none!important;transition:none!important}
+@keyframes livingType{0%,100%{transform:translateY(0) rotate(0deg)}45%{transform:translateY(-2px) rotate(3deg)}}
+@keyframes livingGlow{0%,100%{opacity:.3}50%{opacity:1}}
+@keyframes livingRise{0%{opacity:0;transform:translateY(24px) scale(.9)}16%{opacity:1}80%{opacity:1}100%{opacity:0;transform:translateY(-52px)}}
+@media(prefers-reduced-motion:reduce){.living-office *{animation:none!important}}
+@media(max-width:430px){.living-heading,.living-caption{font-size:10px;padding-left:10px;padding-right:10px}.living-actions{gap:4px;padding:0 8px 9px}.living-actions button{font-size:11px}}
