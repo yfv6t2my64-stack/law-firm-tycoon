@@ -18,7 +18,7 @@ function sceneStructure(){
  const desks=Math.min(people,medium?6:3), positions=[[135,203],[280,230],[424,203],[205,298],[358,316],[492,287]], workers=[[116,174],[260,203],[404,174],[188,268],[343,284],[480,254],[101,289],[527,170],[336,146],[520,342]];
  const fixtures=Array.isArray(FIXTURES)?FIXTURES:[],owned=fixtures.filter(f=>(s.fixtureLevels?.[f.id]||0)>0), names=owned.map(f=>String(f.name).toLocaleLowerCase('tr-TR'));
  const coffee=names.some(n=>n.includes('kahve')||n.includes('espresso')),game=names.some(n=>n.includes('playstation')||n.includes('oyun')),research=names.some(n=>n.includes('içtihat')||n.includes('araştırma')||n.includes('yazılım'));
- const workers=workers.slice(0,people).map((p,i)=>officeFigure(p[0],p[1],i)).join('');
+ const workerSprites=workers.slice(0,people).map((p,i)=>officeFigure(p[0],p[1],i)).join('');
  const tables=positions.slice(0,desks).map((p,i)=>officeDesk(p[0],p[1],i)).join('');
  return `<div class="living-heading"><span>🏢 YAŞAYAN OFİS</span><span class="office-live">● ${officeSceneMode()==='off'?'Sabit görünüm':'Çalışıyor'}</span></div>
  <svg viewBox="0 0 620 415" class="living-svg" role="img" aria-label="${escapeHTML(currentOffice(s).name)} ofisinde çalışan hukukçular, masalar ve satın alınan eşyalar">
@@ -38,7 +38,7 @@ function sceneStructure(){
  ${game?'<g transform="translate(500 325)"><rect x="-43" y="-29" width="87" height="42" rx="7" fill="#41546b"/><rect x="-35" y="-23" width="70" height="26" rx="2" fill="#6ec6de"/><rect x="-10" y="16" width="20" height="7" rx="3" fill="#dde3e8"/></g>':''}
  ${research?'<g transform="translate(330 124)"><rect x="-27" y="-23" width="54" height="32" rx="3" fill="#182d42" stroke="#67d9c5" stroke-width="3"/><path d="M-20 -13H19M-20 -6H8M-20 1H15" stroke="#68d9c5" stroke-width="3"/></g>':''}
  ${medium?'<g transform="translate(300 153)"><ellipse rx="46" ry="21" fill="#a47c5b" stroke="#dbaf81" stroke-width="3"/><path d="M-8 0H20M0 -7V7" stroke="#efca8b" stroke-width="3"/></g>':''}
- </g><g class="office-people">${workers}</g>
+ </g><g class="office-people">${workerSprites}</g>
  <g class="office-happy-overlay" opacity="0"><circle cx="112" cy="80" r="8" fill="#ffe387"/><circle cx="442" cy="97" r="7" fill="#fb97b7"/><path d="M340 55L350 67 337 81" fill="none" stroke="#ffe387" stroke-width="5"/></g>
  </svg><div class="living-caption"><span>${people} karakter · ${staffCount(s)} çalışan</span><span>${escapeHTML(currentOffice(s).name)}</span></div>
  <div id="livingPopups" class="living-popups" aria-live="off"></div>
