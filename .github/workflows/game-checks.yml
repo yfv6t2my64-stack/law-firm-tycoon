@@ -18,7 +18,6 @@ jobs:
           node-version: '22'
       - run: npm test
       - run: npm run build
-      - run: npm run economy
       - name: Commit generated website on feature branch
         if: github.event_name == 'push' && github.ref == 'refs/heads/feature/v0.8-simplified-ux'
         run: |
@@ -29,3 +28,4 @@ jobs:
             git commit -m "Build v0.8 website"
             git push
           fi
+      - run: npm run economy
