@@ -1,0 +1,31 @@
+name: Game checks
+on:
+  push:
+    branches: [main, feature/v0.8-simplified-ux]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm test
+      - run: npm run build
+      - name: Commit generated website on feature branch
+        if: github.event_name == 'push' && github.ref == 'refs/heads/feature/v0.8-simplified-ux'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html dist/index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Build v0.8 website"
+            git push
+          fi
+      - run: npm run economy
