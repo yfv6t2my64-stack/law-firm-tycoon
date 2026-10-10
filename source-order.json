@@ -15,5 +15,6 @@
   "question-bank.js",
   "expansion.js",
   "expansion-ui.js",
+  "living-office.js",
   "app.js"
 ]

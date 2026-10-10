@@ -1,4 +1,4 @@
-# Law Firm Tycoon v0.7
+# Law Firm Tycoon v0.9
 
 Türkçe hukuk bürosu yönetim oyunu. Dosyalar otomatik açılır ve tamamlanır; hukukçular gelir üretir, maaş ve kira giderleri kasadan düşer.
 
@@ -8,7 +8,11 @@ Türkçe hukuk bürosu yönetim oyunu. Dosyalar otomatik açılır ve tamamlanı
 
 Yerel kullanım için `index.html` dosyasını tarayıcıda aç. Kod, stiller ve görseller dosyanın içindedir; harici bağımlılık yoktur.
 
-## v0.7
+## v0.9 — Living Office
+
+Ofis ekranına çalışan sayısı, satın alınan demirbaşlar ve ofis kademesine göre değişen izometrik SVG büro sahnesi eklendi. Dosya tamamlanmaları gerçek dosya tahsilatlarını gösterir. Profil üzerinden grafik kalitesi seçilebilir.
+
+## Önceki özellikler
 
 12 ofis, 20 demirbaş, kişisel bütçe, 18 otomobil, 15 konut, Happy Hour ve beş seçenekli hukuk soruları içerir. Gelir, gider ve son durum (gelir − gider) saniye başına gösterilir; tamamlanan dosya ücretleri ayrıca eklenir.
 
@@ -23,7 +27,7 @@ npm test
 
 `src/` kaynakları `source-order.json` sırasıyla birleştirilir. Derleme kökteki `index.html` ve `dist/index.html` dosyalarını üretir. GitHub Pages `main` dalının kökünden sunulur. Yayın öncesinde mevcut 51 otomatik test geçti.
 
-Bu depo, mevcut v0.7 projesinin yayın kopyasıdır. Tarayıcıdan kaydedilmiş v0.7 dosyasının JavaScript koduyla eşleşmesi doğrulanmıştır. Yerel kaynak proje değiştirilmemiştir.
+Bu depo, mevcut v0.9 projesinin yayın kopyasıdır. Tarayıcıdan kaydedilmiş v0.9 dosyasının JavaScript koduyla eşleşmesi doğrulanmıştır. Yerel kaynak proje değiştirilmemiştir.
 
 ## Kayıt taşıma
 
