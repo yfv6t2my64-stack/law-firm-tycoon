@@ -1084,7 +1084,7 @@ function officeFigure(x,y,i){
 }
 function officeDesk(x,y,i){return `<g transform="translate(${x} ${y})" class="office-desk"><path d="M-43 -13L2 -35 48 -12 4 11Z" fill="#986e54" stroke="#b88f70" stroke-width="2"/><path d="M-43 -13V-4L4 20V11M48 -12V-3L4 20" fill="#644635"/><path d="M-14 -22L7 -32 31 -20 9 -10Z" fill="#263d50"/><path d="M-13 -22V-41L9 -52 31 -41V-20L9 -10Z" fill="#243b4f" stroke="#80b9ce" stroke-width="2"/><path d="M-7 -38L9 -46 25 -38 9 -30Z" fill="#69c4ca" opacity=".85"/><path d="M5 -11L24 -21 35 -15 16 -5Z" fill="#cfd7df"/><circle cx="-26" cy="-9" r="4" fill="#d3b28e"/></g>`;}
 function sceneStructure(){
- const tier=Math.max(0,s.officeTier||0), premium=tier>=7,medium=tier>=3, people=Math.min(officeSceneMode()==='high'?10:7,Math.max(1,staffCount(s)+1));
+ const tier=Math.max(0,s.officeTier||0), premium=tier>=7,medium=tier>=3, people=Math.min(officeSceneMode()==='high'?10:7,Math.max(1,staffCount(s)));
  const desks=Math.min(people,medium?6:3), positions=[[135,203],[280,230],[424,203],[205,298],[358,316],[492,287]], workers=[[116,174],[260,203],[404,174],[188,268],[343,284],[480,254],[101,289],[527,170],[336,146],[520,342]];
  const fixtures=Array.isArray(FIXTURES)?FIXTURES:[],owned=fixtures.filter(f=>(s.fixtureLevels?.[f.id]||0)>0), names=owned.map(f=>String(f.name).toLocaleLowerCase('tr-TR'));
  const coffee=names.some(n=>n.includes('kahve')||n.includes('espresso')),game=names.some(n=>n.includes('playstation')||n.includes('oyun')),research=names.some(n=>n.includes('içtihat')||n.includes('araştırma')||n.includes('yazılım'));
