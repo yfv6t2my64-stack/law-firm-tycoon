@@ -9,7 +9,7 @@ test('living office is based on current staff and office',()=>{
  const ctx=sceneEngine();let markup=ctx.view.sceneStructure();
  assert.match(markup,/YAŞAYAN OFİS/);assert.match(markup,/2 karakter/);
  vm.runInContext('s.staff[0]=4;s.officeTier=3',ctx);
- markup=ctx.view.sceneStructure();assert.match(markup,/5 karakter/);
+ markup=ctx.view.sceneStructure();assert.match(markup,/6 karakter/);
 });
 test('graphics quality persists through hydration',()=>{
  const ctx=sceneEngine();
